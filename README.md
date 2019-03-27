@@ -1,2 +1,18 @@
 # Task
 FastCampus Assignment commit
+
+### Contents
+
+* **과제 제출일 / 폴더 및 파일명 / 과제의 대략적인 설명**
+
+* 2019/ 03/ 21 과제 Assignment190321 - class 및 상속관련 과제
+
+* 2019/ 03/ 22 과제 190322MyFirstProject_OnOff - 스위치 및 버튼구현 과제
+
+* 2019/ 03/ 25 과제 ButtonCode - AlertController의 버튼을 누를때 마다 Label에 숫자 나타내기 구현
+
+* 2019/ 03/ 25 과제 FrameCode - 3가지 view를 순서대로 올리기
+
+* 2019/ 03/ 26 과제 TextFieldCode, TextFieldStory - TextField로 타이핑하여 Label에 출력하기 활성상태일땐 파란색글씨, 비활성상태일땐 빨간색글씨.
+
+* 2019/ 03/ 26 과제 ViewControllerCode - 화면이 바뀔때마다 Label에 숫자 1씩 더하여 나타내기
