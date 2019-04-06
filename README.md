@@ -18,3 +18,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 26 과제 TextFieldCode, TextFieldStory - TextField로 타이핑하여 Label에 출력하기 활성상태일땐 파란색글씨, 비활성상태일땐 빨간색글씨.
 
 * 2019/ 03/ 26 과제 ViewControllerCode - 화면이 바뀔때마다 Label에 숫자 1씩 더하여 나타내기
+
+* 2019/ 04/ 01 과제 Assignment190401 - Typecasting
+
+* 2019/ 04/ 05 실습 LoginPractice - login page 구현
+
+* 2019/ 04/ 06 실습 LoginPracticeDeligate - deligate를 사용하여 login page 구현
