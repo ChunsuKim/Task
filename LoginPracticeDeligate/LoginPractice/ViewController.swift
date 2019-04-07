@@ -42,6 +42,24 @@ class ViewController: UIViewController, UITextFieldDelegate {       // Delegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // email 입력모드로 키보드적용
+        emailTextField.keyboardType = UIKeyboardType.emailAddress
+        // 키보드 색상 어두운걸로 적용
+        emailTextField.keyboardAppearance = UIKeyboardAppearance.dark
+        // 문자를 입력하지 않았을때 리턴키 비활성화 적용
+        emailTextField.enablesReturnKeyAutomatically = true
+        // 내부에 클리어 버튼 표시
+        emailTextField.clearButtonMode = UITextField.ViewMode.always
+        
+        // 비밀번호 입력할때 입력된문자를 보안해주는 모드
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.keyboardAppearance = UIKeyboardAppearance.dark
+        passwordTextField.enablesReturnKeyAutomatically = true
+        passwordTextField.clearButtonMode = UITextField.ViewMode.always
+        // 키보드 타입 영문자 패드로
+        passwordTextField.keyboardType = UIKeyboardType.alphabet
+        
 
         // Delegate 지정
         self.emailTextField.delegate = self
@@ -59,6 +77,19 @@ class ViewController: UIViewController, UITextFieldDelegate {       // Delegate 
             self.slidingUpViewForEmailPassword = true
         }
     }
+    
+    // 텍스트 필드의 내용이 변경될 때 호출
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("텍스트 필드의 내용이 \(string)으로 변경됩니다.")
+        
+        // 현재 텍스트필드에 입력된 길이와 더해질 문자의 길이의 합이 20을 넘는다면 반영하지 않음
+        if (textField.text?.count)! + string.count > 21 {
+            return false
+        } else {
+            return true
+            }
+       
+        }
     
     
     // 이메일과 비밀번호가 일치할 경우 SecondViewController로 signin 일치하지 않을 경우 alert창 띄움
