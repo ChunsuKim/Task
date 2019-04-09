@@ -26,3 +26,5 @@ FastCampus Assignment commit
 * 2019/ 04/ 06 실습 LoginPracticeDeligate - deligate를 사용하여 login page 구현
 
 * 2019/ 04/ 08 실습 LoginPracticeDeligateUserD - Signin/Signup Page 구현 및 Deligate and UserDefaults 사용
+
+* 2019/ 04/ 09 과제 AutoLayoutAssignment - AutoLayout을 적용하여 사각형 5개 정렬하기
