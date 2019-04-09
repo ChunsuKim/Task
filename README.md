@@ -24,3 +24,5 @@ FastCampus Assignment commit
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
 
 * 2019/ 04/ 06 실습 LoginPracticeDeligate - deligate를 사용하여 login page 구현
+
+* 2019/ 04/ 08 실습 LoginPracticeDeligateUserD - Signin/Signup Page 구현 및 Deligate and UserDefaults 사용
