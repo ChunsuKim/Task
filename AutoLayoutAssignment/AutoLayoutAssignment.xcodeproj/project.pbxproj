@@ -12,6 +12,7 @@
 		F3C103D0225C916400164E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C103CE225C916400164E1C /* Main.storyboard */; };
 		F3C103D2225C916500164E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C103D1225C916500164E1C /* Assets.xcassets */; };
 		F3C103D5225C916500164E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C103D3225C916500164E1C /* LaunchScreen.storyboard */; };
+		F3C103DD225CA9F600164E1C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C103DC225CA9F600164E1C /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F3C103D1225C916500164E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3C103D4225C916500164E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3C103D6225C916500164E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C103DC225CA9F600164E1C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				F3C103CA225C916400164E1C /* AppDelegate.swift */,
 				F3C103CC225C916400164E1C /* ViewController.swift */,
 				F3C103CE225C916400164E1C /* Main.storyboard */,
+				F3C103DC225CA9F600164E1C /* SecondViewController.swift */,
 				F3C103D1225C916500164E1C /* Assets.xcassets */,
 				F3C103D3225C916500164E1C /* LaunchScreen.storyboard */,
 				F3C103D6225C916500164E1C /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C103DD225CA9F600164E1C /* SecondViewController.swift in Sources */,
 				F3C103CD225C916400164E1C /* ViewController.swift in Sources */,
 				F3C103CB225C916400164E1C /* AppDelegate.swift in Sources */,
 			);
