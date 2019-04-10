@@ -23,8 +23,12 @@ FastCampus Assignment commit
 
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
 
-* 2019/ 04/ 06 실습 LoginPracticeDeligate - deligate를 사용하여 login page 구현
+* 2019/ 04/ 06 실습 LoginPracticeDelegate - delegate를 사용하여 login page 구현
 
-* 2019/ 04/ 08 실습 LoginPracticeDeligateUserD - Signin/Signup Page 구현 및 Deligate and UserDefaults 사용
+* 2019/ 04/ 08 실습 LoginPracticeDelegateUserD - Signin/Signup Page 구현 및 Delegate and UserDefaults 사용
 
 * 2019/ 04/ 09 과제 AutoLayoutAssignment - AutoLayout을 적용하여 사각형 5개 정렬하기 ViewController : storyboard를 이용하여 AutoLayout 적용, SecondViewController: Code를 사용하여 AutoLayout 적용
+
+* 2019/ 04/ 10 실습 DelegatePractice - 프로토콜을 지정하여 SecondViewController 에 위치한 TextField에 입력한 무언가를 ViewController에 위치한 Label에 출력하도록 Delegate를 이용하여 구현
+
+* 2019/ 04/ 10 실습 SingletonExample Starter - singleton을 활용하여 ViewController에 위치한 TextField에 입력한 값들을 SecondViewController의 Label에 출력하도록 구현
