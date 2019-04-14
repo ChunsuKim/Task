@@ -36,6 +36,7 @@ FastCampus Assignment commit
 * 2019/ 04/ 10 실습 SingletonExample Starter - singleton을 활용하여 ViewController에 위치한 TextField에 입력한 값들을 SecondViewController의 Label에 출력하도록 구현
 
 * 2019/ 04/ 11 과제 Initializer - Failable init and convenience init practice
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Initializer.playground/Contents.swift)
 
 * 2019/ 04/ 12 과제 TableViewPractice - Starter - TableView에 mutipleSelection 적용하여 여러가지 기능 구현 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewMultipleSelection.swift)
