@@ -3,7 +3,7 @@ FastCampus Assignment commit
 
 ### Contents
 
-* **과제 제출일 / 폴더 및 파일명 / 과제의 대략적인 설명**
+* **과제 제출일 / 폴더 및 파일명 / 과제의 대략적인 설명 / 바로가기 링크**
 
 * 2019/ 03/ 11 과제 Assignment190311 - Function 만들기 과제
 
@@ -38,3 +38,5 @@ FastCampus Assignment commit
 * 2019/ 04/ 11 과제 Initializer - Failable init and convenience init practice
 
 * 2019/ 04/ 12 과제 TableViewPractice - Starter - TableView에 mutipleSelection 적용하여 여러가지 기능 구현 과제
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewMultipleSelection.swift)
+
