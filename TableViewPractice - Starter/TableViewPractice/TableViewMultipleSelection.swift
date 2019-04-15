@@ -49,7 +49,7 @@ final class TableViewMultipleSelection: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellId")
-        tableView.allowsMultipleSelection = true
+        tableView.allowsMultipleSelection = true    // 다중선택 기능
         view.addSubview(tableView)
         
         let refreshControl = UIRefreshControl()
@@ -60,30 +60,33 @@ final class TableViewMultipleSelection: UIViewController {
     }
     
     @objc func reloadData() {
-        let selectedNumber = data
-        data.removeAll()    // data 전체 삭제
+        var selectedNumber: [Int] = []
         
-        for selected in tableView.indexPathsForSelectedRows! {
-            data.append(selectedNumber[selected.row])
-            print(selectedNumber[selected.row])     // 값 확인용
+        for indexPath in tableView.indexPathsForSelectedRows ?? [] {
+            selectedNumber.append(data[indexPath.row])
         }
         
-        generateRandomNumber()
+        data = selectedNumber   // data : [selectedRows]
+        
+        for _ in (1...(maxCount - selectedNumber.count)) {
+            data.append(generateRandomNumber())
+        }
+        
+        
         tableView.refreshControl?.endRefreshing()   // refresh control이 구동중이면 멈춘다
         tableView.reloadData()
     }
     
     
-    func generateRandomNumber() {
+    func generateRandomNumber() -> Int {
         #if swift(>=4.2)
-        let randomNumber = (1...(maxCount + maxRange)).randomElement()
+        let randomNumber = (0..<maxCount + maxRange).randomElement()!
         #else
         let randomNumber = Int(arc4random_uniform(UInt32(maxCount + maxRange)))
         #endif
         
-        guard !data.contains(randomNumber!) else { return generateRandomNumber() }
-        data.append(randomNumber!)
-        guard data.count >= 20 else { return generateRandomNumber() }
+        guard !data.contains(randomNumber) else { return generateRandomNumber() }
+        return randomNumber
     }
 }
 
@@ -104,8 +107,7 @@ extension TableViewMultipleSelection: UITableViewDataSource {
 // MARK: - 7이하 숫자를 선택못하게 하는 table view delegate 지정
 extension TableViewMultipleSelection: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let clickableNumber = Int(tableView.cellForRow(at: indexPath)?.textLabel?.text ?? ""), clickableNumber > 7 else { return nil }
-        
+        guard data[indexPath.row] > 7 else { return nil }
         return indexPath
     }
 }
