@@ -30,21 +30,59 @@ final class TableViewAccessoryType: UIViewController {
     "seagull", "black_swan", "peacock", "giraffe"
   ]
   
+    var animalCell: [String : Bool] = [:]
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    for animal in animals {
+        animalCell = [animal : false]
+    }
+    
     let tableView = UITableView(frame: view.frame)
+    tableView.rowHeight = 80
+    tableView.dataSource = self
+    tableView.delegate = self
     view.addSubview(tableView)
+    
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellId")
   }
 }
 
 
 extension TableViewAccessoryType: UITableViewDataSource {
+    
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return animals.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
+    
+    // 텍스트 추가
+    cell.textLabel?.text = animals[indexPath.row]
+    // 이미지 추가
+    cell.imageView?.image = UIImage(named: animals[indexPath.row])
+    
+    cell.accessoryType = .none
+    // checkmark
+    if let checked = animalCell[animals[indexPath.row]] {
+        cell.accessoryType = checked ? .checkmark : .none
+    }
     return cell
   }
 }
+
+// MARK: - Delegate 구현부
+extension TableViewAccessoryType: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath?{
+            animalCell[animals[indexPath.row]] = animalCell[animals[indexPath.row]] ?? false ? false : true
+            tableView.cellForRow(at: indexPath)?.accessoryType = animalCell[animals[indexPath.row]] ?? false ? .checkmark : .none
+        
+        return indexPath
+    }
+}
+
+
+    
+
