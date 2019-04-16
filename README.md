@@ -44,3 +44,5 @@ FastCampus Assignment commit
 * 2019/ 04/ 12 과제 TableViewPractice - Starter - TableView에 mutipleSelection 적용하여 여러가지 기능 구현 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewMultipleSelection.swift)
 
+* 2019/ 04/ 15 과제 TableViewPractice - Starter - TableViewCell에 배열타입의 데이터를 받아 image 및 텍스트 출력하고 checkmark 사용
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewAccessoryType.swift)
