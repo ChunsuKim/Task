@@ -16,6 +16,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 14 과제 Assginment190314 - Array, Dictionary, Enum 등 열거형 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190314.playground/Contents.swift)
 
+* 2019/ 03/ 15 과제 Assginment190315 - Closure and Optional 과제
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190315.playground/Contents.swift)
+
 * 2019/ 03/ 21 과제 Assignment190321 - class 및 상속관련 과제
 
 * 2019/ 03/ 22 과제 190322MyFirstProject_OnOff - 스위치 및 버튼구현 과제
