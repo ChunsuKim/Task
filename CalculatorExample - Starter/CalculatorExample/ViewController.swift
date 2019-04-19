@@ -24,7 +24,7 @@ final class ViewController: UIViewController {
   }
     
     
-    // MARK: - 숫자키 전부 연결(1...0)
+    // MARK: - 숫자키 전부 연결(1...0) 및 출력 함수 구현부
     @IBAction func numButtonAction(_ sender: UIButton) {
         
         // (1자리 숫자연산)입력된 값이 없을 경우 숫자키 titleLabel의 String을 displayText에 입력
@@ -34,9 +34,11 @@ final class ViewController: UIViewController {
         } else {
             displayText? += (sender.titleLabel?.text)!
         }
+        // label에 displayText값 출력
         displayLabel.text = displayText
     }
     
+    // MARK: - AC버튼 연결 및 리셋 함수 구현부
     @IBAction func clearAction(_ sender: UIButton) {
         displayText = nil
         displayLabel.text = "0"
@@ -45,24 +47,26 @@ final class ViewController: UIViewController {
         checkingOperator = nil
     }
     
+    // MARK: - 연산 기호 연결(+, -, ×, ÷, =) 및 연산 함수 구현부
     @IBAction func operaion(_ sender: UIButton) {
-        if displayText != nil {
+        if displayText != nil {     // displayText가 nil이 아닐때만 checkingOperation() 실행
             checkingOperation()
-            checkingOperator = sender.titleLabel!.text!
-            displayText = nil
-            if sender.titleLabel!.text! == "=" {
+            checkingOperator = sender.titleLabel!.text! // 연산기호 버튼을 눌렀을때 연산기호 저장
+            displayText = nil       // 연산 완료 후 displayText nil로 초기화
+            if sender.titleLabel!.text! == "=" {    // = 이 입력되면 inputNum 출력
                 displayLabel.text = String(inputNum)
             }
         } else {
-            checkingOperator = sender.titleLabel!.text!
+            checkingOperator = sender.titleLabel!.text! // inputNum가 없을 경우 0에 연산결과 출력
         }
     }
     
+    // MARK: - 실제 연산할 함수 구현부
     func checkingOperation() {
-        if checkingOperator == nil {
-            inputNum = Double(displayText!)!
-        } else {
-            currentTypingNum = Double(displayText!)!
+        if checkingOperator == nil {    // 연산기호 입력이 없을 시
+            inputNum = Double(displayText!)!    // 입력된 숫자를 inputNum로 대입
+        } else {    // 연산기호가 입력 되었을 시 아래 연산 시작
+            currentTypingNum = Double(displayText!)!    // 현재 입력 숫자를 currentTypingNum로 대입
             if checkingOperator == "+" {
                 inputNum += currentTypingNum
             } else if checkingOperator == "-" {
