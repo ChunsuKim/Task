@@ -11,6 +11,7 @@ import UIKit
 final class ViewController: UIViewController {
     
     // MARK: - Properties
+    var count = 0
     @IBOutlet weak var displayLabel: UILabel!   // storyboard Label 연결
     var displayText: String? = nil  // label에 출력될 값을 결정할 변수
     var checkingOperator: String? = nil // 연산 기호를 저장해둘 변수
@@ -27,19 +28,33 @@ final class ViewController: UIViewController {
     // MARK: - 숫자키 전부 연결(1...0) 및 출력 함수 구현부
     @IBAction func numButtonAction(_ sender: UIButton) {
         
+        if Int(sender.titleLabel!.text!)! < 10 {    // 10이하 숫자가 처음 입력될 때 그 전 연산 초기화
+            if count >= 1 {
+                reset()
+                count = 0
+            }
+        }
+        
         // (1자리 숫자연산)입력된 값이 없을 경우 숫자키 titleLabel의 String을 displayText에 입력
         if displayText == nil {
             displayText = (sender.titleLabel?.text)!
+            
         // (2자리 이상 숫자 연산)입력된 값이 있을 경우 titleLabel의 String을 displayText에 + 연산
         } else {
             displayText? += (sender.titleLabel?.text)!
+            
+            
         }
         // label에 displayText값 출력
         displayLabel.text = displayText
+        
     }
     
     // MARK: - AC버튼 연결 및 리셋 함수 구현부
     @IBAction func clearAction(_ sender: UIButton) {
+        reset()
+    }
+    func reset() {
         displayText = nil
         displayLabel.text = "0"
         inputNum = 0
@@ -49,12 +64,14 @@ final class ViewController: UIViewController {
     
     // MARK: - 연산 기호 연결(+, -, ×, ÷, =) 및 연산 함수 구현부
     @IBAction func operaion(_ sender: UIButton) {
+        count = 0   // count = 0 변수 초기화
         if displayText != nil {     // displayText가 nil이 아닐때만 checkingOperation() 실행
             checkingOperation()
             checkingOperator = (sender.titleLabel?.text)! // 연산기호 버튼을 눌렀을때 연산기호 저장
             displayText = nil       // 연산 완료 후 displayText nil로 초기화
             if (sender.titleLabel?.text)! == "=" {    // = 이 입력되면 inputNum 출력
                 displayLabel.text = String(inputNum)
+                count += 1  // = 을 입력할때 마다 count 1 증가
             }
         } else {
             checkingOperator = sender.titleLabel!.text! // nil일 경우 연산기호 저장
