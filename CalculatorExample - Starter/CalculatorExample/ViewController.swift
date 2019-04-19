@@ -51,20 +51,20 @@ final class ViewController: UIViewController {
     @IBAction func operaion(_ sender: UIButton) {
         if displayText != nil {     // displayText가 nil이 아닐때만 checkingOperation() 실행
             checkingOperation()
-            checkingOperator = sender.titleLabel!.text! // 연산기호 버튼을 눌렀을때 연산기호 저장
+            checkingOperator = (sender.titleLabel?.text)! // 연산기호 버튼을 눌렀을때 연산기호 저장
             displayText = nil       // 연산 완료 후 displayText nil로 초기화
-            if sender.titleLabel!.text! == "=" {    // = 이 입력되면 inputNum 출력
+            if (sender.titleLabel?.text)! == "=" {    // = 이 입력되면 inputNum 출력
                 displayLabel.text = String(inputNum)
             }
         } else {
-            checkingOperator = sender.titleLabel!.text! // inputNum가 없을 경우 0에 연산결과 출력
+            checkingOperator = sender.titleLabel!.text! // nil일 경우 연산기호 저장
         }
     }
     
     // MARK: - 실제 연산할 함수 구현부
     func checkingOperation() {
         if checkingOperator == nil {    // 연산기호 입력이 없을 시
-            inputNum = Double(displayText!)!    // 입력된 숫자를 inputNum로 대입
+            inputNum = Double(displayText!)!    // 입력된 숫자를 Double로 형 변환 후 inputNum로 대입
         } else {    // 연산기호가 입력 되었을 시 아래 연산 시작
             currentTypingNum = Double(displayText!)!    // 현재 입력 숫자를 currentTypingNum로 대입
             if checkingOperator == "+" {
