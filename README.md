@@ -65,7 +65,7 @@ FastCampus Assignment commit
 * 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
 
-* 2019/ 04/ 19 실습 CalculatorExample - 계산기 구현 ver. 1.0
-[파일보기](https://github.com/ChunsuKim/Task/blob/master/CalculatorExample%20-%20Starter/CalculatorExample/ViewController.swift)
+* 2019/ 04/ 19 실습 Calculator-Starter_ver_1.0 - 계산기 구현 ver. 1.0
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Calculator-Starter_ver_1.0/CalculatorExample/ViewController.swift)
 
 
