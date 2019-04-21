@@ -24,11 +24,20 @@ final class ViewController: UIViewController {
     displayLabel.text = "0"
   }
     
+//    var displayValue: Double {
+//        get {
+//            return Double(displayLabel.text!)!
+//        }
+//        set {
+//            displayLabel.text! = String(newValue)
+//        }
+//    }
+    
     
     // MARK: - 숫자키 전부 연결(1...0) 및 출력 함수 구현부
     @IBAction func numButtonAction(_ sender: UIButton) {
         
-        if Int(sender.titleLabel!.text!)! < 10 {    // 10이하 숫자가 처음 입력될 때 그 전 연산 초기화
+        if Int(sender.titleLabel!.text!)! < 10 {    // 연산결과 출력 후 10이하 숫자가 처음 입력될 때 그 전 연산 초기화
             if count >= 1 {
                 reset()
                 count = 0
@@ -101,3 +110,4 @@ final class ViewController: UIViewController {
     }
     
 }
+
