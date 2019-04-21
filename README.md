@@ -62,5 +62,10 @@ FastCampus Assignment commit
 * 2019/ 04/ 17 실습 InstagramStater - xib를 사용하여 instagram 따라해보기 TableViewCell 과 AutoLayout 활용
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/InstagramStarter/Instagram)
 
+* 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
+
 * 2019/ 04/ 19 실습 CalculatorExample - 계산기 구현 ver. 1.0
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CalculatorExample%20-%20Starter/CalculatorExample/ViewController.swift)
+
+
