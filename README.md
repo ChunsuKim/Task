@@ -66,7 +66,7 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
 
 * 2019/ 04/ 19 실습 Calculator-Starter_ver_1.0 - 계산기 구현 ver. 1.0
-[파일보기](https://github.com/ChunsuKim/Task/blob/master/Calculator-Starter_ver_1.0/CalculatorExample/ViewController.swift)
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Calculator_ver_1.0/Calculator_ver_1.0/ViewController.swift)
 
 * 2019/ 04/ 22 과제 HigherOrderFunction - 고차함수 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/HigherOrderFunction/HigherOrderFunction.playground/Pages/Practice.xcplaygroundpage/Contents.swift)
