@@ -6,6 +6,7 @@ FastCampus Assignment commit
 * **과제 제출일 / 폴더 및 파일명 / 과제의 대략적인 설명 / 바로가기 링크**
 
 * 2019/ 03/ 11 과제 Assignment190311 - Function 만들기 과제
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190311.playground/Contents.swift)
 
 * 2019/ 03/ 12 실습 20190312_practice - Function practice
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/20190312_practice.playground/Contents.swift)
@@ -65,7 +66,7 @@ FastCampus Assignment commit
 * 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
 
-* 2019/ 04/ 19 실습 Calculator-Starter_ver_1.0 - 계산기 구현 ver. 1.0
+* 2019/ 04/ 19 실습 Calculator_ver_1.0 - 계산기 구현 ver. 1.0
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Calculator_ver_1.0/Calculator_ver_1.0/ViewController.swift)
 
 * 2019/ 04/ 22 과제 HigherOrderFunction - 고차함수 과제
