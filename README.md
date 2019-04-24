@@ -44,6 +44,7 @@ FastCampus Assignment commit
 * 2019/ 04/ 08 실습 LoginPracticeDelegateUserD - Signin/Signup Page 구현 및 Delegate and UserDefaults 사용
 
 * 2019/ 04/ 09 과제 AutoLayoutAssignment - AutoLayout을 적용하여 사각형 5개 정렬하기 ViewController : storyboard를 이용하여 AutoLayout 적용, SecondViewController: Code를 사용하여 AutoLayout 적용
+[파일보기 코드버전](https://github.com/ChunsuKim/Task/blob/master/AutoLayoutAssignment/AutoLayoutAssignment/SecondViewController.swift)
 
 * 2019/ 04/ 09 클메과제 AlertControllerDelegate - Delegate를 활용하여 버튼을 눌렀을 때 배경색 변경
 
