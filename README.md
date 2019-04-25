@@ -61,8 +61,8 @@ FastCampus Assignment commit
 * 2019/ 04/ 15 과제 TableViewPractice - Starter - TableViewCell에 배열타입의 데이터를 받아 image 및 텍스트 출력하고 checkmark 사용
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewAccessoryType.swift)
 
-* 2019/ 04/ 17 실습 InstagramStater - xib를 사용하여 instagram 따라해보기 TableViewCell 과 AutoLayout 활용
-[파일보기](https://github.com/ChunsuKim/Task/tree/master/InstagramStarter/Instagram)
+* 2019/ 04/ 17 실습 Instagram_ver_1.0 - xib를 사용하여 instagram 따라해보기 TableViewCell 과 AutoLayout 활용
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Instagram_ver_1.0/Instagram)
 
 * 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
