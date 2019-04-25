@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CommentButtonDelegate: class {
+    func commentButtonDidTap(_ commentView: FeedTableViewCell)
+}
+
 class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -15,6 +19,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     
     @IBOutlet weak var feedImageView: UIImageView!
+    
+    var delegate : CommentButtonDelegate?
     
     var model: FeedData!{
         didSet{
@@ -41,5 +47,14 @@ class FeedTableViewCell: UITableViewCell {
         sender.isSelected.toggle()
     }
     
+    @IBAction func commentgo(_ sender: UIButton) {
+       delegate?.commentButtonDidTap(self)
+        
+        
+    }
+    
+    
     
 }
+
+

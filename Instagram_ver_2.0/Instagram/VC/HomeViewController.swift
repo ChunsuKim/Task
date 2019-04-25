@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         configure()
     }
     
+    
     // MARK: other func
     
     func configure(){
@@ -99,9 +100,24 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feed", for: indexPath) as! FeedTableViewCell
         
         cell.model = feedDataArr[indexPath.row]
-        
+        cell.delegate = self
         return cell
     }
 
 }
 
+extension HomeViewController: CommentButtonDelegate {
+    func commentButtonDidTap(_ commentView: FeedTableViewCell) {
+        if let indexPath = tableView.indexPath(for: commentView) {
+            let commentView = CommentViewController()
+            
+            navigationController?.pushViewController(commentView, animated: true)
+
+            
+        }
+
+    }
+    
+
+    
+}
