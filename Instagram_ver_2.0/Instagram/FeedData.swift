@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class FeedData {
     let profileImage: String?
     let nickName: String?
     let feedImage: String?
     var comment: [String]? = ["ㅋㅋㅋㅋ", "lol"]
+    
+    let cellInfo: UITableViewCell? = nil
     
     init(profileImage: String?, nickName: String?, feedImage: String?) {
         self.profileImage = profileImage ?? AppImageData.profile + "\(1)"

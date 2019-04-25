@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
     // MARK: - Properties
     
+    let commentViewController = CommentViewController()
+    
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +20,8 @@ class HomeViewController: UIViewController {
     }()
     
     var feedDataArr = [FeedData]()
+    
+    var commentButtonFlag = false
     
     // MARK: - Methods
     
@@ -41,7 +45,7 @@ class HomeViewController: UIViewController {
         // tableViewSetting
         tableViewRegister()
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
         tableView.separatorColor = .clear
         
         // addSubView
@@ -108,16 +112,14 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: CommentButtonDelegate {
     func commentButtonDidTap(_ commentView: FeedTableViewCell) {
-        if let indexPath = tableView.indexPath(for: commentView) {
-            let commentView = CommentViewController()
-            
-            navigationController?.pushViewController(commentView, animated: true)
-
-            
-        }
-
+        
+        let indexpath = tableView.indexPath(for: commentView)
+        commentViewController.feedData = feedDataArr[indexpath!.row]
+        
+        navigationController?.pushViewController(commentViewController, animated: true)
     }
-    
+}
 
+extension HomeViewController: UITableViewDelegate {
     
 }

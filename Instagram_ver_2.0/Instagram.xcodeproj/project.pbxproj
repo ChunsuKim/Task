@@ -16,6 +16,8 @@
 		3CCB949E2262F24400D79838 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB949D2262F24400D79838 /* FeedData.swift */; };
 		F3A3E6F82266EDD9000EEF48 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E6F62266EDD9000EEF48 /* FeedTableViewCell.swift */; };
 		F3A3E6F92266EDD9000EEF48 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A3E6F72266EDD9000EEF48 /* FeedTableViewCell.xib */; };
+		F3EAA43C22718AA7005B1D5B /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EAA43B22718AA7005B1D5B /* CommentTableViewCell.xib */; };
+		F3EAA43E22718ADD005B1D5B /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EAA43D22718ADD005B1D5B /* CommentTableViewCell.swift */; };
 		F3F5748A2270195B002DB3A6 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F574892270195B002DB3A6 /* CommentViewController.swift */; };
 		F3F5748C22706B6E002DB3A6 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5748B22706B6E002DB3A6 /* FeedManager.swift */; };
 		F3F5748E22706E42002DB3A6 /* InputCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5748D22706E42002DB3A6 /* InputCommentView.swift */; };
@@ -33,6 +35,8 @@
 		3CCB949D2262F24400D79838 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		F3A3E6F62266EDD9000EEF48 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		F3A3E6F72266EDD9000EEF48 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		F3EAA43B22718AA7005B1D5B /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		F3EAA43D22718ADD005B1D5B /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		F3F574892270195B002DB3A6 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		F3F5748B22706B6E002DB3A6 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		F3F5748D22706E42002DB3A6 /* InputCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCommentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			children = (
 				F3A3E6F62266EDD9000EEF48 /* FeedTableViewCell.swift */,
 				F3A3E6F72266EDD9000EEF48 /* FeedTableViewCell.xib */,
+				F3EAA43B22718AA7005B1D5B /* CommentTableViewCell.xib */,
+				F3EAA43D22718ADD005B1D5B /* CommentTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 				F3A3E6F92266EDD9000EEF48 /* FeedTableViewCell.xib in Resources */,
 				3C4B6923225F8D65001CDCC0 /* LaunchScreen.storyboard in Resources */,
 				3C4B6920225F8D65001CDCC0 /* Assets.xcassets in Resources */,
+				F3EAA43C22718AA7005B1D5B /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +186,7 @@
 				F3F5748C22706B6E002DB3A6 /* FeedManager.swift in Sources */,
 				3C4B6919225F8D64001CDCC0 /* AppDelegate.swift in Sources */,
 				3C4B692D225F96CB001CDCC0 /* PlusViewController.swift in Sources */,
+				F3EAA43E22718ADD005B1D5B /* CommentTableViewCell.swift in Sources */,
 				3CCB949E2262F24400D79838 /* FeedData.swift in Sources */,
 				3C4B692B225F94C9001CDCC0 /* AppImageData.swift in Sources */,
 			);

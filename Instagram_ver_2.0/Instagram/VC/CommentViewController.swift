@@ -8,11 +8,17 @@
 
 import UIKit
 
-class CommentViewController: UIViewController, UITextFieldDelegate {
+class CommentViewController: UIViewController {
     
     var feedData: FeedData?
     
-    var inputTextView = InputCommentView()
+    let inputCommentView: InputCommentView = {
+        let inputCommentView = InputCommentView()
+        inputCommentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return inputCommentView
+    }()
+    
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -20,19 +26,19 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
         return tableView
     }()
     
-    var commentArr = [String]()
-    var commentTextField: UITextField? = UITextField()
+//    var commentArr = [String]()
+//    var commentTextField: UITextField? = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.commentTextField?.delegate = self
+        self.inputCommentView.delegate = self
         self.tableView.dataSource = self
         
         tableView.frame = view.frame
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "comment")
         
-        commentTextField?.text = ""
+//        commentTextField?.text = ""
         
         setting()
         autoLayout()
@@ -43,13 +49,14 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setting() {
-        commentTextField?.font = UIFont.systemFont(ofSize: 20)
-        commentTextField?.layer.cornerRadius = 20
-        commentTextField?.textAlignment = .center
-        commentTextField?.placeholder = "Typing Comment"
+//        commentTextField?.font = UIFont.systemFont(ofSize: 20)
+//        commentTextField?.layer.cornerRadius = 20
+//        commentTextField?.textAlignment = .center
+//        commentTextField?.placeholder = "Typing Comment"
         
         view.addSubview(tableView)
-        view.addSubview(commentTextField!)
+        view.addSubview(inputCommentView)
+//        view.addSubview(commentTextField!)
     }
     
     func naviSetting() {
@@ -57,19 +64,24 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func autoLayout() {
-        commentTextField?.translatesAutoresizingMaskIntoConstraints = false
-        
-        commentTextField?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        commentTextField?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        commentTextField?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5).isActive = true
-        commentTextField?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5).isActive = true
-        
+//        commentTextField?.translatesAutoresizingMaskIntoConstraints = false
+//
+//        commentTextField?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+//        commentTextField?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+//        commentTextField?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5).isActive = true
+//        commentTextField?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5).isActive = true
+//
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: inputCommentView.topAnchor).isActive = true
+        
+        inputCommentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        inputCommentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        inputCommentView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        inputCommentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
-        tableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
     }
     
     @objc private func addComment() {
@@ -84,15 +96,21 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
 
 extension CommentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.commentArr.count
+        return (feedData?.comment?.count)!
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath) as! CommentTableViewCell
+        
+        cell.feedImageView?.image = UIImage(named: feedData?.feedImage ?? "")
+        cell.feedNameLabel.text = feedData?.nickName ?? ""
+        cell.feedCommentLabel.text = feedData?.comment?[indexPath.row] ?? ""
+        
+        tableView.rowHeight = cell.frame.height
     
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = commentArr[indexPath.row]
+//        cell.textLabel?.numberOfLines = 0
+//        cell.textLabel?.text = commentArr[indexPath.row]
     
         return cell
     }
@@ -102,4 +120,12 @@ extension CommentViewController: UITableViewDataSource {
         self.tableView.rowHeight = UITableView.automaticDimension
     }
 
+}
+
+extension CommentViewController: InputCommentViewDelegate {
+    func addCommentButtonDidTap(text: String) {
+        feedData?.comment?.append(text)
+        FeedManager.shared.addFeedData(feedData!)
+        tableView.reloadData()
+    }
 }

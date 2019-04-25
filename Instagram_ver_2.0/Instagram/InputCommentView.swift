@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol InputCommentViewDelegate: class {
+    func addCommentButtonDidTap(text: String)
+}
+
 class InputCommentView: UIView {
+    
+    weak var delegate: InputCommentViewDelegate?
 
     var emojis = ["😁","😂","👾","😡","😍","❤️","🙌🏿","🐈"]
     var buttons = [UIButton]()
@@ -86,15 +92,21 @@ class InputCommentView: UIView {
     
     @objc func addCommentButtonDidTap(_ sender: UIButton) {
         
-        if !textField.text!.isEmpty{
+        delegate?.addCommentButtonDidTap(text: textField.text!)
             
-        }
+        
         print("textField Empty")
     }
     
     @objc func emojiButtonDidTap(_ sender: UIButton) {
         
         textField.text = (textField.text! + sender.titleLabel!.text!)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        
     }
 }
 
