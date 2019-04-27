@@ -77,4 +77,4 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/HigherOrderFunction/HigherOrderFunction.playground/Pages/Practice.xcplaygroundpage/Contents.swift)
 
 * 2019/ 04/ 27 시험 Second_Test - 배운 내용 시험
-[파일보기](https://github.com/ChunsuKim/Task/tree/master/First_Test.playground/Pages)
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Second_Test.playground/Pages)
