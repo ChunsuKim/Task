@@ -35,6 +35,9 @@ FastCampus Assignment commit
 
 * 2019/ 03/ 26 과제 ViewControllerCode - 화면이 바뀔때마다 Label에 숫자 1씩 더하여 나타내기
 
+* 2019/ 03/ 29 시험 First_Test - 배운 내용 시험
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/First_Test.playground/Pages)
+
 * 2019/ 04/ 01 과제 Assignment190401 - Typecasting
 
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
