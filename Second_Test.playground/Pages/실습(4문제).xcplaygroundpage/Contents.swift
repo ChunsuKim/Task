@@ -31,10 +31,54 @@ import Foundation
 
 print("\n---------- [ 1번 문제 ] ----------\n")
 
+class Customer {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    
+    func order(menu: CoffeeMenu, to barista: Barista) {
+        let coffee = barista.makeCoffee(menu: menu)
+        print("\(name)이(가) \(barista.name)에게 \(coffee.price)원짜리 \(coffee.name)을(를) 주문하였습니다.")
+    }
+}
 
-//let customer = Customer(name: "손님A")
-//let barista = Barista(name: "바리스타A")
-//customer.order(menu: .americano, to: barista)
+class Barista {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    
+    func makeCoffee(menu: CoffeeMenu) -> Coffee {
+        let price: Int
+        switch menu {
+        case .americano: price = 2000
+        case .latte: price = 2500
+        case .cappuccino: price = 3000
+            
+        }
+        return Coffee(name: menu.rawValue, price: price)
+    }
+}
+
+enum CoffeeMenu: String {
+    case americano = "Americano"
+    case latte = "Latte"
+    case cappuccino = "Cappuccino"
+}
+
+class Coffee {
+    let name: String
+    let price: Int
+    init(name: String, price: Int) {
+        self.name = name
+        self.price = price
+    }
+}
+
+let customer = Customer(name: "손님A")
+let barista = Barista(name: "바리스타A")
+customer.order(menu: .americano, to: barista)
 
 // 손님A이(가) 바리스타A에게 2000원짜리 Americano을(를) 주문하였습니다.
 
@@ -77,7 +121,23 @@ let data2 = [0, 3, 9, 15, 27, 33, 41, 49, 90, 98]
 
 print("\n---------- [ 2번 문제 ] ----------\n")
 
+func sortOut(numbers: [Int]) -> [Int: [Int]] {
+    var groupDict: [Int: [Int]] = [:]
+    
+    for i in numbers {
+        if let _ = groupDict[i / 10] {
+            groupDict[i / 10]?.append(i)
+        } else {
+            groupDict[i / 10] = [i]
+        }
+    }
+    return groupDict
+}
 
+let groupDict = sortOut(numbers: data2)
+for group in groupDict.keys.sorted() {
+    print("Group: \(group) - Value: \(groupDict[group]!)")
+}
 
 
 /***************************************************
@@ -86,7 +146,26 @@ print("\n---------- [ 2번 문제 ] ----------\n")
 
 print("\n---------- [ 3번 문제 ] ----------\n")
 
+func sortOutNumbers(_ numbers: [Int]) -> [[Int]] {
+    var groups: [[Int]] = []
+    
+    for number in numbers {
+        let quotient = number / 10
+        let diffCount = quotient - groups.count
+        
+        if diffCount >= 0 {
+            (0...diffCount).forEach { _ in groups.append([]) }
+        }
+        groups[quotient].append(number)
+    }
+    return groups
+}
 
+let numbers = sortOutNumbers(data2)
+for (idx, group) in numbers.enumerated() {
+    guard !group.isEmpty else { continue }
+    print("Group: \(idx) - Value: \(group)")
+}
 
 
 
@@ -104,8 +183,21 @@ print("\n---------- [ 3번 문제 ] ----------\n")
 
 print("\n---------- [ 4번 문제 ] ----------\n")
 
+// 1)
+let oneToHundred = Array(1...100)
+let result4_1 = oneToHundred
+    .filter { !$0.isMultiple(of: 2) }
+    .map { $0 + 1 }
+print(result4_1)
 
 
+// 2)
+let strings = ["1", "2", "3", "4", "5", "A", "B", "C", "D"]
+let result4_2 = strings
+    .compactMap(Int.init)
+    .map { $0 * $0 }
+    .reduce(0, +)
+print(result4_2)
 
 
 /***************************************************
