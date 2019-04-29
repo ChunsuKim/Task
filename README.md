@@ -80,3 +80,6 @@ FastCampus Assignment commit
 
 * 2019/ 04/ 27 시험 Second_Test - 배운 내용 시험
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Second_Test.playground/Pages)
+
+* 2019/ 04/ 27 시험 AutoLayoutExam - AutoLayout 시험 3개는 스토리보드 1개는 코드
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/AutoLayoutExam/AutoLayoutExam)
