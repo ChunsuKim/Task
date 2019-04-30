@@ -48,6 +48,7 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190401.playground/Contents.swift)
 
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPractice/LoginPractice)
 
 * 2019/ 04/ 06 실습 LoginPracticeDelegate - delegate를 사용하여 login page 구현
 
