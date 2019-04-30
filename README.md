@@ -42,6 +42,7 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/First_Test.playground/Pages)
 
 * 2019/ 04/ 01 과제 Assignment190401 - Typecasting
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190401.playground/Contents.swift)
 
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
 
