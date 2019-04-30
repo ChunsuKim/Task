@@ -36,9 +36,10 @@ FastCampus Assignment commit
 
 * 2019/ 03/ 26 과제 TextFieldCode, TextFieldStory - TextField로 타이핑하여 Label에 출력하기 활성상태일땐 파란색글씨, 비활성상태일땐 빨간색글씨.
 [파일보기코드버전](https://github.com/ChunsuKim/Task/blob/master/TextFieldCode/TextFieldCode/ViewController.swift)
-[파일보기스토리보드버전](https://github.com/ChunsuKim/Task/blob/master/TextFieldStory/TextFieldCode/ViewController.swift)
+/[파일보기스토리보드버전](https://github.com/ChunsuKim/Task/blob/master/TextFieldStory/TextFieldCode/ViewController.swift)
 
 * 2019/ 03/ 26 과제 ViewControllerCode - 화면이 바뀔때마다 Label에 숫자 1씩 더하여 나타내기
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/ViewControllerCode/ViewControllerCode)
 
 * 2019/ 03/ 29 시험 First_Test - 배운 내용 시험
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/First_Test.playground/Pages)
