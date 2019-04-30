@@ -27,7 +27,7 @@ struct ItemManager {
         Menu(title: "클래식", imageName: "불고기", count: 0, price: 10000),
         Menu(title: "클래식", imageName: "슈퍼디럭스", count: 0, price: 10000),
         Menu(title: "클래식", imageName: "슈퍼슈프림", count: 0, price: 10000),
-        Menu(title: "클래식", imageName: "페페로니", count: 0, price: 10000),
+        Menu(title: "클래식", imageName: "페퍼로니", count: 0, price: 10000),
         Menu(title: "클래식", imageName: "포테이토", count: 0, price: 10000),
         Menu(title: "슈퍼시드", imageName: "글램핑 바비큐", count: 0, price: 10000),
         Menu(title: "슈퍼시드", imageName: "알로하 하와이안", count: 0, price: 10000),

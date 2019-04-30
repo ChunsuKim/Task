@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol MenuList {
     var title: String { get }
     var imageName: String { get }

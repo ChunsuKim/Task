@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol CategoryTableViewCellDelegate: class {
+    func send(tableViewCell: UITableViewCell)
+}
+
 class CategoryTableViewCell: UITableViewCell {
     
+    weak var delegate: CategoryTableViewCellDelegate?
     let categoryMenuImage = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -22,7 +27,6 @@ class CategoryTableViewCell: UITableViewCell {
     
     func autoLayout() {
         
-        
         categoryMenuImage.translatesAutoresizingMaskIntoConstraints = false
         
         categoryMenuImage.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -31,23 +35,21 @@ class CategoryTableViewCell: UITableViewCell {
         categoryMenuImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
-//    func setImage(imageName: String) {
-//        categoryMenuImage.image = UIImage(named: imageName)
-//    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
 }

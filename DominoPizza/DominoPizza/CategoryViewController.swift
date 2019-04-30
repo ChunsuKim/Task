@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol CategoryViewControllerDelegate: class {
+    func reset()
+}
+
 final class CategoryViewController: UIViewController {
     
+    weak var delegate: CategoryViewControllerDelegate?
     private let itemManager = ItemManager()
     private lazy var items: [MenuList] = itemManager.items
     
@@ -24,6 +29,13 @@ final class CategoryViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "List")
+        
+        setting()
+        autoLayout()
+    }
+    
+    func setting() {
+        
         view.addSubview(tableView)
         
         let header = UIImageView(image: UIImage(named: "logo"))
@@ -34,8 +46,6 @@ final class CategoryViewController: UIViewController {
         tableView.rowHeight = 100
         
         self.title = "Domino`s"
-        
-        autoLayout()
     }
     
     func autoLayout() {
@@ -48,9 +58,6 @@ final class CategoryViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
     }
-    
-    
-    
 }
 
 extension CategoryViewController: UITableViewDataSource {
@@ -64,7 +71,6 @@ extension CategoryViewController: UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 extension CategoryViewController: UITableViewDelegate {
@@ -72,7 +78,8 @@ extension CategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         productVC.title = itemManager.categories[indexPath.row]
-        
+        self.delegate = productVC
+        delegate?.reset()
         navigationController?.pushViewController(productVC, animated: true)
     }
 }
