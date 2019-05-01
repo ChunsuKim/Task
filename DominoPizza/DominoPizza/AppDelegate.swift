@@ -13,15 +13,21 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    let categoryVC = CategoryViewController()
+    let wishListVC = WishListViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions LaunchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         setupKeyWindow()
+        
+        categoryVC.productVC.detailVC.delegate = self
+        
         return true
     }
     
     func setupKeyWindow() {
         
-        let categoryVC = CategoryViewController()
-        let wishListVC = WishListViewController()
+        
         
         // TabBar setting
         categoryVC.tabBarItem = UITabBarItem(title: "Domino`s", image: nil, tag: 0)
@@ -43,4 +49,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+}
+
+extension AppDelegate: DetailViewControllerDelegate {
+    func reload() {
+        wishListVC.selectedPizzas = ItemManager.shared.countDict.keys.sorted()
+        wishListVC.tableView.reloadData()
+    }
 }

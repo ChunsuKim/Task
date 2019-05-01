@@ -15,8 +15,8 @@ protocol CategoryViewControllerDelegate: class {
 final class CategoryViewController: UIViewController {
     
     weak var delegate: CategoryViewControllerDelegate?
-    private let itemManager = ItemManager()
-    private lazy var items: [MenuList] = itemManager.items
+//    private let itemManager = ItemManager()
+//    private lazy var items: [MenuList] = itemManager.items
     
     let headerView = UIImageView()
     let tableView = UITableView()
@@ -62,12 +62,13 @@ final class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemManager.categories.count
+       
+        return ItemManager.shared.categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as! CategoryTableViewCell
-        cell.categoryMenuImage.image = UIImage(named: itemManager.categories[indexPath.row])
+        cell.categoryMenuImage.image = UIImage(named: ItemManager.shared.categories[indexPath.row])
         
         return cell
     }
@@ -77,7 +78,7 @@ extension CategoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        productVC.title = itemManager.categories[indexPath.row]
+        productVC.title = ItemManager.shared.categories[indexPath.row]
         self.delegate = productVC
         delegate?.reset()
         navigationController?.pushViewController(productVC, animated: true)

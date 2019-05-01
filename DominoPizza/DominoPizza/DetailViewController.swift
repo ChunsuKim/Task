@@ -25,8 +25,8 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         configure()
+        autoLayout()
         
     }
     
@@ -37,10 +37,10 @@ final class DetailViewController: UIViewController {
         switch sender.tag {
         case 1:
             if count != 0 {
-                (ItemManager.shared.countDict.updateValue((count - 1), forKey: title))
+                (ItemManager.shared.countDict.updateValue((count-1), forKey: title))
             }
         case 2:
-            ItemManager.shared.countDict.updateValue(count + 1, forKey: title)
+            ItemManager.shared.countDict.updateValue(count+1, forKey: title)
             
         default:
             return
@@ -53,6 +53,8 @@ final class DetailViewController: UIViewController {
     
     
     func configure() {
+        
+        view.backgroundColor = .white
         
         view.addSubview(imageView)
         view.addSubview(leftButton)
@@ -80,7 +82,9 @@ final class DetailViewController: UIViewController {
         countLabel.textAlignment = .center
         
         imageView.contentMode = .scaleAspectFit
+    }
         
+    func autoLayout() {
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

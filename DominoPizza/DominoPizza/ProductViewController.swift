@@ -54,6 +54,7 @@ final class ProductViewController: UIViewController {
 
 extension ProductViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         print(productItem.count)
         return productItem.count
     }
     
