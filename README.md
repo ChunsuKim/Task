@@ -51,6 +51,7 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPractice/LoginPractice)
 
 * 2019/ 04/ 06 실습 LoginPracticeDelegate - delegate를 사용하여 login page 구현
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPracticeDelegate/LoginPractice)
 
 * 2019/ 04/ 08 실습 LoginPracticeDelegateUserD - Signin/Signup Page 구현 및 Delegate and UserDefaults 사용
 
