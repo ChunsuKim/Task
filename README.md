@@ -60,6 +60,7 @@ FastCampus Assignment commit
 [파일보기 코드버전](https://github.com/ChunsuKim/Task/blob/master/AutoLayoutAssignment/AutoLayoutAssignment/SecondViewController.swift)
 
 * 2019/ 04/ 09 클메과제 AlertControllerDelegate - Delegate를 활용하여 버튼을 눌렀을 때 배경색 변경
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/AlertControllerDelegate/AlertControllerDelegate)
 
 * 2019/ 04/ 10 실습 DelegatePractice - 프로토콜을 지정하여 SecondViewController 에 위치한 TextField에 입력한 무언가를 ViewController에 위치한 Label에 출력하도록 Delegate를 이용하여 구현
 
