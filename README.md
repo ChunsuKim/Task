@@ -97,4 +97,4 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/DominoPizza/DominoPizza)
 
 * 2019/ 05/ 01 실습 CellPractice - Data 파일을 생성하여 TableView Cell에 색션을 나눠서 Data를 넣기
-[파일보기](https://github.com/ChunsuKim/Task/blob/master/CellPractice/CellPractice/ViewController.swift)
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/CellPractice/CellPractice)
