@@ -101,3 +101,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 02 실습 SingleLinkedList - 자료구조(Data Structure)에서 single linked list 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/SingleLinkedList.playground/Contents.swift)
+
+* 2019/ 05/ 03 수업자료 Algorithm - 알고리즘(Algorithm) 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Algorithm/Algorithm.pdf)
