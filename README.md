@@ -99,6 +99,9 @@ FastCampus Assignment commit
 * 2019/ 05/ 01 실습 CellPractice - Data 파일을 생성하여 TableView Cell에 색션을 나눠서 Data를 넣기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/CellPractice/CellPractice)
 
+* 2019/ 05/ 02 수업자료 Data Structure - 자료구조(Data Structure) 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Data%20Structure/Data%20Structure.pdf)
+
 * 2019/ 05/ 02 실습 SingleLinkedList - 자료구조(Data Structure)에서 single linked list 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/SingleLinkedList.playground/Contents.swift)
 
