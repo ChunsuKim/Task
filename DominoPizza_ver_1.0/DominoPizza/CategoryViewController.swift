@@ -15,8 +15,6 @@ protocol CategoryViewControllerDelegate: class {
 final class CategoryViewController: UIViewController {
     
     weak var delegate: CategoryViewControllerDelegate?
-//    private let itemManager = ItemManager()
-//    private lazy var items: [MenuList] = itemManager.items
     
     let headerView = UIImageView()
     let tableView = UITableView()
@@ -62,7 +60,6 @@ final class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return ItemManager.shared.categories.count
     }
     

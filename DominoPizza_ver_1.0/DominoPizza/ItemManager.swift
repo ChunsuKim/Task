@@ -13,7 +13,7 @@ struct ItemManager {
     static var shared = ItemManager()
     init(){}
     
-    var countDict = [String:Int]()
+    var countDict: [String:Int] = [:]
     
     let categories: [String] = ["슈퍼시드", "프리미엄", "클래식", "사이드디시", "음료", "피클소스"]
     

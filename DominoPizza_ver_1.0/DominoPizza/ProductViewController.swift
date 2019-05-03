@@ -10,16 +10,16 @@ import UIKit
 
 final class ProductViewController: UIViewController {
     
-    var product = ItemManager.shared.items
-    var productItem = [MenuList]()
+    var pizzas = ItemManager.shared.items
+    var productItem: [MenuList] = []
     var tableView = UITableView()
     let detailVC = DetailViewController()
     
-    
+    // FIXME: - something wrong
     func findProduct() {
-        for i in product {
-            if (i.title == self.title) {
-                productItem.append(i)
+        for pizza in pizzas {
+            if (pizza.title == self.title) {
+                productItem.append(pizza)
             }
         }
     }
@@ -29,10 +29,8 @@ final class ProductViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellId")
         
         
-        findProduct()
         configure()
     }
     

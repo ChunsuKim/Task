@@ -22,3 +22,4 @@ struct Menu: MenuList {
     var count: Int
     var price: Int
 }
+
