@@ -93,7 +93,7 @@ FastCampus Assignment commit
 * 2019/ 04/ 27 시험 AutoLayoutExam - AutoLayout 시험 3개는 스토리보드 1개는 코드
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/AutoLayoutExam/AutoLayoutExam)
 
-* 2019/ 04/ 29 실습 DominoPizza - TableView를 이용하여 Domino Pizza App 만들어 보기
+* 2019/ 04/ 29 실습 DominoPizza_ver_1.0 - TableView를 이용하여 Domino Pizza App 만들어 보기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/DominoPizza_ver_1.0/DominoPizza)
 
 * 2019/ 05/ 01 실습 CellPractice - Data 파일을 생성하여 TableView Cell에 색션을 나눠서 Data를 넣기
