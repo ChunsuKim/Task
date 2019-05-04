@@ -107,3 +107,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 03 수업자료 Algorithm - 알고리즘(Algorithm) 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Algorithm/Algorithm.pdf)
+
+* 2019/ 05/ 04 실습 DominoPizza_ver_1.5 - Domino Pizza App MVC model 적용
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/DominoPizza_ver_1.5/DominoPizza)
