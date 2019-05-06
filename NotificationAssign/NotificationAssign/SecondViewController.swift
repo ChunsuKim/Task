@@ -10,8 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    // MARK: - Properties
     let colorView = UIView()
-    
     let notiCenter = NotificationCenter.default
     
     override func viewDidLoad() {
@@ -36,12 +36,12 @@ class SecondViewController: UIViewController {
         colorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60).isActive = true
     }
     
-    
+    // MARK: - Notification Observer
     func noti() {
         notiCenter.addObserver(self, selector: #selector(changingColor(_:)), name: Notification.Name("colorChangeNotification"), object: nil)
     }
     
-    
+    // MARK: - Action function
     @objc func changingColor(_ noti: Notification) {
         guard let color = noti.userInfo?["color"] as? UIColor else { return }
         
@@ -49,12 +49,13 @@ class SecondViewController: UIViewController {
         colorView.backgroundColor = color
     }
     
-    
+    // MARK: - Notification deinitialize
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 }
 
+// MARK: - extension Notification
 extension SecondViewController {
     var colorChangeNotification: Notification.Name {
         return Notification.Name("colorChangeNotification")

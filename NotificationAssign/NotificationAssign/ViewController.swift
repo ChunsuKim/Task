@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         autoLayout()
     }
     
-    
+    // MARK: - setting function
     func configure() {
         
         // Label setting
@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         // Button setting
         setButton.setTitle("Color Setting", for: .normal)
         setButton.setTitleColor(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), for: .normal)
+        setButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         setButton.addTarget(self, action: #selector(setColordidTapButton(_:)), for: .touchUpInside)
         
         // addSubview
@@ -80,7 +81,7 @@ class ViewController: UIViewController {
         view.addSubview(setButton)
     }
     
-    
+    // MARK: - AutoLayout
     func autoLayout() {
         redLabel.translatesAutoresizingMaskIntoConstraints = false
         redLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 90).isActive = true
@@ -127,11 +128,11 @@ class ViewController: UIViewController {
         alphaSlider.widthAnchor.constraint(equalTo: alphaLabel.widthAnchor, multiplier: 3).isActive = true
         
         setButton.translatesAutoresizingMaskIntoConstraints = false
-        setButton.topAnchor.constraint(equalTo: alphaLabel.bottomAnchor, constant: 40).isActive = true
+        setButton.topAnchor.constraint(equalTo: alphaLabel.bottomAnchor, constant: 80).isActive = true
         setButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
     
-    
+    // MARK: - Action function
     @objc func setColordidTapButton(_ noti: UIButton) {
         let red = CGFloat(redSlider.value)
         let green = CGFloat(greenSlider.value)
@@ -140,6 +141,7 @@ class ViewController: UIViewController {
         
         let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
         
+        // MARK: - Notification Declare
         NotificationCenter.default.post(name: Notification.Name("colorChangeNotification"), object: nil, userInfo: ["color": color])
     }
 }
