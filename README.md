@@ -115,3 +115,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 05 도전과제 DoubleLinkedList - 자료구조(Data Structure) Double linked list 도전과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/DoubleLinkedList.playground/Contents.swift)
+
+* 2019/ 05/ 07 수업자료 UITouch:UIGestureRecognizer - UITouch 와 UIGestureRecognizer 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/UITouch:UIGestureRecognizer/UIGestureRecognizer.pdf)
