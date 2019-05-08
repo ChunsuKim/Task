@@ -12,6 +12,9 @@ final class TouchViewController: UIViewController {
 
   @IBOutlet private weak var imageView: UIImageView!
     var imageHolding = false
+    // 객체를 터치했을때 부자연스러운 움직임 조정을 위한 거리변수 선언
+    var distanceTouchfromInstanceX: CGFloat = 0
+    var distanceTouchfromInstanceY: CGFloat = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,9 +35,20 @@ final class TouchViewController: UIViewController {
         imageView.image = UIImage(named: "cat2")
         imageHolding = true
         }
+        
+        
+        distanceTouchfromInstanceX = touchPoint.x - imageView.frame.origin.x
+        distanceTouchfromInstanceY = touchPoint.y - imageView.frame.origin.y
+        
         print(" ------ touch began ------ ")
         print(touchPoint)
+        print("originx")
+        print(imageView.frame.origin.x)
+        print(imageView.frame.origin.y)
+        
     }
+    
+    
     
     // MARK: - Touch 상태로 움직일때 실행되는 method
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,8 +59,11 @@ final class TouchViewController: UIViewController {
         imageView.frame.contains(touchPoint)
 //        imageView.center = touchPoint   // image center를 클릭하여 image를 움직인다.
         
+        imageView.frame.origin.x = touchPoint.x - distanceTouchfromInstanceX
+        imageView.frame.origin.y = touchPoint.y - distanceTouchfromInstanceY
+        
         print(" ------ touch moved ------ ")
-        print(touchPoint)
+//        print(touchPoint)
     }
     
     // MARK: - Touch가 끝났을 때 실행되는 method
