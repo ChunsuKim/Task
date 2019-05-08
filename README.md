@@ -118,3 +118,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 07 수업자료 UITouch:UIGestureRecognizer - UITouch 와 UIGestureRecognizer 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UITouch:UIGestureRecognizer/UIGestureRecognizer.pdf)
+
+* 2019/ 05/ 08 과제 UITouch:UIGestureRecognizer - UITouch 에서 이미지 터치 후 이동시 부자연스러운 동작 해결하기
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/UITouch:UIGestureRecognizer/GestureRecognizerExample%20-%20Starter/GestureRecognizerExample/TouchViewController.swift)
