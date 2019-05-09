@@ -95,8 +95,8 @@ class ViewController: UIViewController {
         
         count += 1
         
-        countTextLabel.text = "\(count)"
-        positionLabel.text = "좌표 : (\(String(format: "%.3f", arguments: [touchPoint.x])), \(String(format: "%.3f", arguments: [touchPoint.y])))"
+        countTextLabel.text = "Counts of touches: \(count)"
+        positionLabel.text = "Coordinate : (\(String(format: "%.3f", arguments: [touchPoint.x])), \(String(format: "%.3f", arguments: [touchPoint.y])))"
         
         print(count)
     }
