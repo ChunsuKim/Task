@@ -130,3 +130,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 09 실습 UIDeviceExample (Starter) - UIDevice 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UIDeviceExample%20(Starter)/UIDeviceExample/ViewController.swift)
+
+* 2019/ 05/ 10 수업자료 Core Location - CoreLocation 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Core%20Location/CoreLocation.pdf)
