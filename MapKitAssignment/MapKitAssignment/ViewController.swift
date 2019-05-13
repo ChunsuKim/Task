@@ -12,9 +12,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     let textFiled = UITextField()
-    var mapView = MKMapView()
-    var exPoint: [CLLocationCoordinate2D] = []
+    let removeButton = UIButton(type: .system)
+    private var mapView = MKMapView()
+    private var exPoint: [CLLocationCoordinate2D] = []
     private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -40,11 +42,16 @@ class ViewController: UIViewController {
         textFiled.enablesReturnKeyAutomatically = true
         textFiled.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
         
+        removeButton.setTitle("Remove", for: .normal)
+        removeButton.setTitleColor(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), for: .normal)
+        removeButton.addTarget(self, action: #selector(removeOverlays(_:)), for: .touchUpInside)
+        
         mapView.mapType = .standard
         mapView.showsCompass = true
         mapView.delegate = self
         
         view.addSubview(textFiled)
+        mapView.addSubview(removeButton)
         view.addSubview(mapView)
         
     }
@@ -77,6 +84,12 @@ class ViewController: UIViewController {
         mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        removeButton.translatesAutoresizingMaskIntoConstraints = false
+        removeButton.topAnchor.constraint(equalTo: textFiled.bottomAnchor).isActive = true
+        removeButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        removeButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        removeButton.centerXAnchor.constraint(equalTo: textFiled.centerXAnchor).isActive = true
     }
     
     @objc func textFieldShouldReturn(_ sender: UITextField) {
@@ -99,6 +112,12 @@ class ViewController: UIViewController {
         sender.resignFirstResponder()
     }
     
+    @objc func removeOverlays(_ sender: UIButton) {
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        exPoint = []
+    }
+    
     
     func setRegion(coordinate: CLLocationCoordinate2D) {
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -113,7 +132,7 @@ class ViewController: UIViewController {
     func addAnnotation(_ sender: CLLocationCoordinate2D) {
         
         let placePoint = MKPointAnnotation()
-        placePoint.title = "\(exPoint.count) visited place"
+        placePoint.title = "Marking place \(exPoint.count)"
         placePoint.coordinate = sender
         mapView.addAnnotation(placePoint)
         
@@ -140,8 +159,8 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
-        if let poliline = overlay as? MKPolyline {
-            let renderer = MKPolylineRenderer(polyline: poliline)
+        if let polyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyline)
             renderer.strokeColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
             renderer.lineWidth = 2
             return renderer
