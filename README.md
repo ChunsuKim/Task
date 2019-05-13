@@ -136,3 +136,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 10 실습 - MapKitExample (starter) - MapKit을 활용한 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/MapKitExample%20(starter)/MapKitExample)
+
+* 2019/ 05/ 13 과제 - MapKitAssignment - MapKit을 활용하여 주소나 명칭을 입력하는 곳마다 주위에 네모칸을 그리고 포인트를 선으로 이어주기
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/MapKitAssignment/MapKitAssignment/ViewController.swift)
