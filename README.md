@@ -145,3 +145,9 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 14 과제 - ButtonAnimation - UIView Animation을 활용하여 버튼 구성하기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/ButtonAnimation/ButtonAnimation/ViewController.swift)
+
+* 2019/ 05/ 15 수업자료 - SearchViewController - SearchViewController 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/SearchViewController.md)
+
+* 2019/ 05/ 15 실습 - CandiesSearchController - Starter - SearchViewController를 이용한 실습
+[파일보기](
