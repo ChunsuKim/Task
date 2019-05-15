@@ -150,4 +150,7 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/SearchViewController.md)
 
 * 2019/ 05/ 15 실습 - CandiesSearchController - Starter - SearchViewController를 이용한 실습
-[파일보기](https://github.com/ChunsuKim/Task/tree/master/CandiesSearchController%20-%20Starter/CandiesSearchController)
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CandiesSearchController%20-%20Starter/CandiesSearchController/MainTableViewController.swift)
+
+* 2019/ 05/ 15 실습 - SearchViewControllerExample - Starter - SearchViewController를 활용하여 Pizza menu 검색 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/SearchViewControllerExample%20-%20Starter/SearchViewControllerExample/MainTableViewController.swift)
