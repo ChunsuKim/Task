@@ -150,4 +150,4 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/SearchViewController.md)
 
 * 2019/ 05/ 15 실습 - CandiesSearchController - Starter - SearchViewController를 이용한 실습
-[파일보기](
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/CandiesSearchController%20-%20Starter/CandiesSearchController)
