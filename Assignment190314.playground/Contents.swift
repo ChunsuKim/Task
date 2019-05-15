@@ -60,13 +60,21 @@ func arrangement() -> Array<Int> {
     let origin = [2, 8, 7, 1, 4, 3]
     var result: Array<Int> = []
     
-    for i in origin {
-        if i % 2 != 0 {
-            result.insert(i, at: 0)
-        }else {
-            result.append(i)
+    origin.forEach {
+        if $0 % 2 != 0 {
+            result.insert($0, at: 0)
+        } else {
+            result.append($0)
         }
     }
+    
+//    for i in origin {
+//        if i % 2 != 0 {
+//            result.insert(i, at: 0)
+//        }else {
+//            result.append(i)
+//        }
+//    }
     return result
 }
 

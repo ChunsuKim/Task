@@ -56,6 +56,7 @@ print(twoStr(("Pino", "Raon")))
 
 // 자연수를 입력받아 그 수의 약수를 모두 출력하는 함수
 // 쉬움
+
 func divisor(num: Int) -> Int{
     for i in 1...num {
         if num % i == 0 {
