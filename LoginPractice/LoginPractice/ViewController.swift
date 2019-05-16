@@ -48,14 +48,23 @@ class ViewController: UIViewController {
             return
         }
         
-        for user in users {
-            if user.email == id && user.password == password {
+        users.forEach {
+            if $0.email == id && $0.password == password {
                 print("Signin Success")
                 
                 let secondViewController = SecondViewController()
-                secondViewController.currentUser = user
+                secondViewController.currentUser = $0
                 present(secondViewController, animated: true, completion: nil)
                 return
+                
+//        for user in users {
+//            if user.email == id && user.password == password {
+//                print("Signin Success")
+        
+//                let secondViewController = SecondViewController()
+//                secondViewController.currentUser = user
+//                present(secondViewController, animated: true, completion: nil)
+//                return
             }
         }
         
