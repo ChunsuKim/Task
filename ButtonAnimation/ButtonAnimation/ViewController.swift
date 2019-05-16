@@ -24,10 +24,12 @@ class ViewController: UIViewController {
     }
     
     private var firstMenuContainer: [UIButton] = []
+    private var secondMenuContainer: [UIButton] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirstMenu()
+        setupSecondMenu()
         
     }
     
@@ -39,7 +41,7 @@ class ViewController: UIViewController {
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
     }
     
-    private func makeMenuButtonWith(frame: CGRect, title: String) -> UIButton {
+    private func makeMenuButton(with frame: CGRect, title: String) -> UIButton {
         let button = UIButton(frame: frame)
         button.backgroundColor = randomColorGenerator()
         button.setTitle(title, for: .normal)
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
     private func setupFirstMenu() {
         for i in (0..<UI.menuCount) {
             let menuFrame = CGRect(x: 50, y: view.bounds.height - 120, width: UI.menuSize, height: UI.menuSize)
-            let button = makeMenuButtonWith(frame: menuFrame, title: "버튼 \(i)")
+            let button = makeMenuButton(with: menuFrame, title: "버튼 \(i)")
             firstMenuContainer.append(button)
             
             if i == 0 {
@@ -64,19 +66,78 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func firstMenuDidTap(_ sender: UIButton) {
+    private func setupSecondMenu() {
+        for i in (0..<UI.menuCount) {
+            let menuFrame = CGRect(
+                x: view.bounds.width - 50 - UI.menuSize,
+                y: view.bounds.height - 120,
+                width: UI.menuSize,
+                height: UI.menuSize)
+            let button = makeMenuButton(with: menuFrame, title: "버튼 \(i)")
+            secondMenuContainer.append(button)
+            
+            if i == 0 {
+                button.transform = .identity
+                button.addTarget(self, action: #selector(secondMenuDidTap(_:)), for: .touchUpInside)
+            }
+        }
+        view.bringSubviewToFront(secondMenuContainer.first!)
+        
+    }
+    
+    // MARK: - ActionHandler
+    @objc private func firstMenuDidTap(_ sender: UIButton) {
         sender.isSelected.toggle()
         
-        UIView.animate(withDuration: Time.long, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
-            for (idx, menu) in self.firstMenuContainer.enumerated() {
-                guard idx != 0 else { continue }
-                if sender.isSelected {
-                    menu.transform = .identity
-                    menu.center.y -= UI.distance * CGFloat(idx)
-                } else {
-                    menu.transform = menu.transform.scaledBy(x: UI.minScale, y: UI.minScale)
-                    menu.center.y += UI.distance * CGFloat(idx)
+        UIView.animate(
+            withDuration: Time.long,
+            delay: 0, usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 0.0,
+            options: [],
+            animations: {
+                for (idx, menu) in self.firstMenuContainer.enumerated() {
+                    guard idx != 0 else { continue }
+                    if sender.isSelected {
+                        menu.transform = .identity
+                        menu.center.y -= UI.distance * CGFloat(idx)
+                    } else {
+                        menu.transform = menu.transform.scaledBy(x: UI.minScale, y: UI.minScale)
+                        menu.center.y += UI.distance * CGFloat(idx)
                 }
+            }
+        })
+    }
+    
+    @objc private func secondMenuDidTap(_ button: UIButton) {
+        button.isSelected.toggle()
+        
+        var startTime = 0.0
+        var duration = 1.0 / Double(UI.menuCount)
+        
+        UIView.animateKeyframes(
+            withDuration: Time.middle,
+            delay: 0,
+            options: [.beginFromCurrentState],
+            animations: {
+                for i in 1..<UI.menuCount {
+                    defer { startTime += duration }
+                    UIView.addKeyframe(
+                        withRelativeStartTime: startTime,
+                        relativeDuration: duration,
+                        animations: {
+                            if button.isSelected {
+                                self.secondMenuContainer[i].transform = .identity
+                                self.secondMenuContainer.enumerated()
+                                    .filter { $0.offset >= i }
+                                    .forEach { $0.element.center.y -= UI.distance }
+                            } else {
+                                let minScaleTransform = CGAffineTransform(scaleX: UI.minScale, y: UI.minScale)
+                                self.secondMenuContainer[UI.menuCount - i].transform = minScaleTransform
+                                self.secondMenuContainer.enumerated()
+                                    .filter { $0.offset >= UI.menuCount - i }
+                                    .forEach { $0.element.center.y += UI.distance }
+                    }
+                })
             }
         })
     }
