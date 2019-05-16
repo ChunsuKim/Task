@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // MARK: - Setting Methods
     private func randomColorGenerator() -> UIColor {
         let r = CGFloat.random(in: 0...1.0)
         let g = CGFloat.random(in: 0...1.0)
@@ -62,8 +62,9 @@ class ViewController: UIViewController {
                 button.transform = .identity
                 button.addTarget(self, action: #selector(firstMenuDidTap(_:)), for: .touchUpInside)
             }
-            view.bringSubviewToFront(firstMenuContainer.first!)
         }
+        view.bringSubviewToFront(firstMenuContainer.first!)
+        
     }
     
     private func setupSecondMenu() {
