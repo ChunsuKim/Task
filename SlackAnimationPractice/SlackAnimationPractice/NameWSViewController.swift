@@ -91,9 +91,17 @@ class NameWSViewController: UIViewController {
             .top()
             .trailing(constant: -16)
         
+        //        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        //        nextButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        //        nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        
         closeButton.layout
             .leading(constant: 16)
             .centerY(equalTo: nextButton.centerYAnchor)
+        
+        //        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        //        closeButton.centerYAnchor.constraint(equalTo: nextButton.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        //        closeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         
         wsNameTextField.layout
             .leading(constant: 16)
@@ -117,14 +125,7 @@ class NameWSViewController: UIViewController {
         indicatorViewLeadingConst = activityIndicatorView.leadingAnchor.constraint(equalTo: wsNameTextField.leadingAnchor)
         indicatorViewLeadingConst.isActive = true
         
-//        nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-//        nextButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        
-//        closeButton.translatesAutoresizingMaskIntoConstraints = false
-//        closeButton.centerYAnchor.constraint(equalTo: nextButton.safeAreaLayoutGuide.centerYAnchor).isActive = true
-//        closeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
     }
     
     private func vibration() {
