@@ -143,9 +143,12 @@ class NameWSViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.activityIndicatorView.stopAnimating()
-            // 1. 다음 뷰컨트롤러 띄우는 코드
-            // 2. text를 다음 뷰 컨트롤러한테 넘기기
         }
+        
+        let registerView = RegisterViewController()
+        registerView.registerTextField.text = self.wsNameTextField.text
+        
+        navigationController?.pushViewController(registerView, animated: true)
     }
     
     @objc func didTapCloseButton(_ sender: UIButton) {

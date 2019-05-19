@@ -37,7 +37,5 @@ class ViewController: UIViewController {
         let naviController = UINavigationController(rootViewController: vc)
         present(naviController, animated: true)
     }
-
-
 }
 

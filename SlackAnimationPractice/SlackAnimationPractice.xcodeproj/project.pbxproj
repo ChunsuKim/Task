@@ -14,6 +14,7 @@
 		F3CBA5AE228D02D000B6B2CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CBA5AC228D02D000B6B2CC /* LaunchScreen.storyboard */; };
 		F3CBA5B6228D0D9300B6B2CC /* NameWSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CBA5B5228D0D9300B6B2CC /* NameWSViewController.swift */; };
 		F3CBA5B8228D122D00B6B2CC /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CBA5B7228D122D00B6B2CC /* UIVIewExtension.swift */; };
+		F3CBA5BA228D523400B6B2CC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CBA5B9228D523400B6B2CC /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F3CBA5AF228D02D000B6B2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CBA5B5228D0D9300B6B2CC /* NameWSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameWSViewController.swift; sourceTree = "<group>"; };
 		F3CBA5B7228D122D00B6B2CC /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+		F3CBA5B9228D523400B6B2CC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				F3CBA5A3228D02CF00B6B2CC /* AppDelegate.swift */,
 				F3CBA5A5228D02CF00B6B2CC /* ViewController.swift */,
 				F3CBA5B5228D0D9300B6B2CC /* NameWSViewController.swift */,
+				F3CBA5B9228D523400B6B2CC /* RegisterViewController.swift */,
 				F3CBA5B7228D122D00B6B2CC /* UIVIewExtension.swift */,
 				F3CBA5A7228D02CF00B6B2CC /* Main.storyboard */,
 				F3CBA5AA228D02D000B6B2CC /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3CBA5A6228D02CF00B6B2CC /* ViewController.swift in Sources */,
+				F3CBA5BA228D523400B6B2CC /* RegisterViewController.swift in Sources */,
 				F3CBA5B6228D0D9300B6B2CC /* NameWSViewController.swift in Sources */,
 				F3CBA5B8228D122D00B6B2CC /* UIVIewExtension.swift in Sources */,
 				F3CBA5A4228D02CF00B6B2CC /* AppDelegate.swift in Sources */,
