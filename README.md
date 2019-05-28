@@ -165,3 +165,4 @@ FastCampus Assignment commit
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/StatusBarAndHomeIndicatorExample%20(Starter)/StatusBarAndHomeIndicatorExample)
 
 * 2019/ 05/ 28 실습 - CustomLogExample (Starter) - Log message customized
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/CustomLogExample%20(Starter)/CustomLogExample)
