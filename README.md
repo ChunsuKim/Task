@@ -160,3 +160,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 17 실습 - Instagram_ver_3.0 - ImagePicker와 UserDefault를 활용하여 인스타그램 업그레이드
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Instagram_ver_3.0/Instagram/Instagram)
+
+* 2019/ 05/ 28 실습 - StatusBarAndHomeIndicatorExample - Status Bar 와 Home Indicator 애니매이션 및 customize
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/StatusBarAndHomeIndicatorExample%20(Starter)/StatusBarAndHomeIndicatorExample)
