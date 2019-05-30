@@ -167,5 +167,8 @@ FastCampus Assignment commit
 * 2019/ 05/ 28 실습 - CustomLogExample (Starter) - Log message customized
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/CustomLogExample%20(Starter)/CustomLogExample)
 
+* 2019/ 05/ 28 실습 - UserNotificationExample (Starter) - User Notification을 활용한 알림활용
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/UserNotificationExample%20(Starter)/UserNotificationExample)
+
 * 2019/ 05/ 29 실습 - StackView Starter - StackView 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/StackView%20Starter)
