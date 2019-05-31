@@ -14,6 +14,7 @@ class CodeSpotInfoViewController: UIViewController {
     let scrollView = UIScrollView()
     let topView = UIView()
     let topStackView = UIStackView()
+    let hideButton = UIButton(type: .system)
     
     let whyVisitStackView = UIStackView()
     let whyVisitTitleLabel = UILabel()
@@ -47,6 +48,10 @@ class CodeSpotInfoViewController: UIViewController {
     
     // MARK: - Configure and AutoLayout
     func configure() {
+        hideButton.setTitle("Hide", for: .normal)
+        hideButton.setTitle("Show", for: .selected)
+        hideButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        hideButton.addTarget(self, action: #selector(handleHide(_:)), for: .touchUpInside)
         
         whyVisitTitleLabel.text = "WHY VISIT"
         whyVisitLabel.text = vacationSpot.whyVisit
@@ -96,6 +101,7 @@ class CodeSpotInfoViewController: UIViewController {
         whatToSeeLabel.numberOfLines = 0
         
         view.addSubview(scrollView)
+        view.addSubview(hideButton)
         scrollView.addSubview(topView)
         topView.addSubview(topStackView)
         
@@ -123,6 +129,10 @@ class CodeSpotInfoViewController: UIViewController {
     }
     
     func autoLayout() {
+        hideButton.translatesAutoresizingMaskIntoConstraints = false
+        hideButton.leadingAnchor.constraint(equalTo: weatherLabel.trailingAnchor, constant: 10).isActive = true
+        hideButton.firstBaselineAnchor.constraint(equalTo: weatherLabel.firstBaselineAnchor).isActive = true
+        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -142,6 +152,19 @@ class CodeSpotInfoViewController: UIViewController {
         
     }
 
-    
+    @objc func handleHide(_ sender: UIButton) {
+        
+        sender.isSelected.toggle()
+        
+        if sender.isSelected {
+            UIView.animate(withDuration: 0.3) {
+                self.weatherInfoLabel.isHidden = true
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.weatherInfoLabel.isHidden = false
+            }
+        }
+    }
 
 }
