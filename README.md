@@ -182,5 +182,8 @@ FastCampus Assignment commit
 * 2019/ 05/ 29 실습 - StackView Starter - StackView 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/StackView%20Starter)
 
+* 2019/ 05/ 30 수업자료 - CollectionView.pdf - UICollectionView 수업자료 이론
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CollectionView.pdf)
+
 * 2019/ 05/ 30 실습 - CollectionViewExample (starter) - UICollectionView 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/CollectionViewExample%20(starter)/CollectionViewExample)
