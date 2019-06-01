@@ -193,3 +193,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 31 실습 - CocoapotsExample - Cocoapots 프레임워크를 활용한 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CocoapotsExample/CocoapotsExample/ViewController.swift)
+
+* 2019/ 05/ 31 실습 - CarthageExample - Carthage 라이브러리를 활용한 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CarthageExample/CarthageExample/ViewController.swift)
