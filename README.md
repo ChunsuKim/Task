@@ -194,6 +194,9 @@ FastCampus Assignment commit
 * 2019/ 05/ 31 수업자료 - Network 이론.pdf - Network 이론 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Network%20%EC%9D%B4%EB%A1%A0.pdf)
 
+* 2019/ 05/ 31 수업자료 - Dependency Manager.pdf - 프레임워크와 라이브러리 활용에 대한 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Dependency%20Manager.pdf)
+
 * 2019/ 05/ 31 실습 - CocoapotsExample - Cocoapots 프레임워크를 활용한 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CocoapotsExample/CocoapotsExample/ViewController.swift)
 
