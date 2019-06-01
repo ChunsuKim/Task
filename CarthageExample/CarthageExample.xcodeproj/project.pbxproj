@@ -12,6 +12,7 @@
 		F300BCA222A103AC006FBF0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F300BCA022A103AC006FBF0F /* Main.storyboard */; };
 		F300BCA422A103AD006FBF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F300BCA322A103AD006FBF0F /* Assets.xcassets */; };
 		F300BCA722A103AD006FBF0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F300BCA522A103AD006FBF0F /* LaunchScreen.storyboard */; };
+		F300BCB022A109C1006FBF0F /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F300BCAF22A109C1006FBF0F /* DynamicColor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F300BCA322A103AD006FBF0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F300BCA622A103AD006FBF0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F300BCA822A103AD006FBF0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F300BCAF22A109C1006FBF0F /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F300BCB022A109C1006FBF0F /* DynamicColor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				F300BC9B22A103AC006FBF0F /* CarthageExample */,
 				F300BC9A22A103AC006FBF0F /* Products */,
+				F300BCAE22A109C1006FBF0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 			path = CarthageExample;
 			sourceTree = "<group>";
 		};
+		F300BCAE22A109C1006FBF0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F300BCAF22A109C1006FBF0F /* DynamicColor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				F300BC9522A103AC006FBF0F /* Sources */,
 				F300BC9622A103AC006FBF0F /* Frameworks */,
 				F300BC9722A103AC006FBF0F /* Resources */,
+				F300BCB122A109E7006FBF0F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +142,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F300BCB122A109E7006FBF0F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DynamicColor.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F300BC9522A103AC006FBF0F /* Sources */ = {
@@ -283,6 +317,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +338,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
