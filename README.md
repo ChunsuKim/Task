@@ -164,6 +164,9 @@ FastCampus Assignment commit
 * 2019/ 05/ 17 실습 - Instagram_ver_3.0 - ImagePicker와 UserDefault를 활용하여 인스타그램 업그레이드
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Instagram_ver_3.0/Instagram/Instagram)
 
+* 2019/ 05/ 20 수업자료 - Kakao OAuth Login.pdf - Kakao API를 활용한 카카오 계정정보로 로그인 연동 설명 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Kakao%20OAuth%20Login.pdf)
+
 * 2019/ 05/ 20 실습 - KakaoOAuthLogin - Kakao API를 활용한 카카오 계정정보로 로그인
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/KakaoOAuthLogin/KakaoOAuthLogin)
 
