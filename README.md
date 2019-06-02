@@ -5,6 +5,9 @@ FastCampus Assignment commit
 
 * **과제 제출일 / 폴더 및 파일명 / 과제의 대략적인 설명 / 바로가기 링크**
 
+* 2019/ 03/ 05 수업자료 컴퓨터 개론.pdf - 컴퓨터 개론 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B0%9C%EB%A1%A0.pdf)
+
 * 2019/ 03/ 11 과제 Assignment190311 - Function 만들기 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190311.playground/Contents.swift)
 
