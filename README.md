@@ -211,3 +211,6 @@ FastCampus Assignment commit
 
 * 2019/ 05/ 31 실습 - CarthageExample - Carthage 라이브러리를 활용한 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CarthageExample/CarthageExample/ViewController.swift)
+
+* 2019/ 06/ 03 수업자료 - JSON.pdf - JSON(Javascript Object Notation)
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/JSON.pdf)
