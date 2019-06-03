@@ -215,3 +215,5 @@ FastCampus Assignment commit
 * 2019/ 06/ 03 수업자료 - JSON.pdf - JSON(Javascript Object Notation)
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/JSON.pdf)
 
+* 2019/ 06/ 03 실습 - JSONSerialization - JSON Creating, Parsing practice
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/JSONSerialization.playground/Pages)
