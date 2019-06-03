@@ -217,3 +217,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 03 실습 - JSONSerialization - JSON Creating, Parsing practice
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/JSONSerialization.playground/Pages)
+
+* 2019/ 06/ 03 과제 - JSONParsing - JSON 관련 과제
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/JSONParsing.playground/Contents.swift)
