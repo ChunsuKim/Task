@@ -220,3 +220,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 03 과제 - JSONParsing - JSON 관련 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/JSONParsing.playground/Contents.swift)
+
+* 2019/ 06/ 04 수업자료 - Codable.pdf - Codable 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Codable.pdf)
