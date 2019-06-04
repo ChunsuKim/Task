@@ -223,3 +223,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 04 수업자료 - Codable.pdf - Codable 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Codable.pdf)
+
+* 2019/ 06/ 04 실습 및 과제 - CodableExample - Codable Practice and Assignment
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/CodableExample.playground/Pages)
