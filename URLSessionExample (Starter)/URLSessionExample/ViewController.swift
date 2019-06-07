@@ -124,7 +124,41 @@ final class ViewController: UIViewController {
   
   @IBAction private func sessionConfig(_ sender: Any) {
     print("\n---------- [ Session Configuration ] ----------\n")
-
+    
+    _ = URLSession.shared
+    _ = URLSessionConfiguration.default
+    _ = URLSessionConfiguration.ephemeral
+    _ = URLSessionConfiguration.background(withIdentifier: "backgroundID")
+    
+    let sessionConfig = URLSessionConfiguration.default
+    sessionConfig.allowsCellularAccess = false  // default = true. Wi-fi만 가능하도록 할 때는 false
+    sessionConfig.httpMaximumConnectionsPerHost = 5 // default = 4
+    sessionConfig.timeoutIntervalForRequest = 20    // default = 60 sec
+    sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData    // default = .useProtocolCachePolicy
+    sessionConfig.waitsForConnectivity = true   // default = false 네트워크 연결관련
+    
+    // 16 KB (16 * 1024 = 16384), 256 MB (256 * 1024 * 1024 = 268435456)
+    let myCache = URLCache(memoryCapacity: 16_384, diskCapacity: 268_435_456, diskPath: nil)
+    sessionConfig.urlCache = myCache
+    
+//    FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+    let cache = URLCache.shared
+    sessionConfig.urlCache = cache
+    print(cache.diskCapacity)
+    print(cache.currentDiskUsage)
+    
+//    cache.removeAllCachedResponses()    // total cache delete
+    
+    let mySession = URLSession(configuration: sessionConfig)
+    let url = URL(string: imageUrlStr)!
+    let task = mySession.dataTask(with: url) { [weak self] (data, response, error) in
+        guard let data = data else { return }
+        DispatchQueue.main.async {
+            self?.imageView.image = UIImage(data: data)!
+            print("download completed")
+        }
+    }
+    task.resume()
   }
   
 
@@ -133,18 +167,79 @@ final class ViewController: UIViewController {
   @IBAction func requestGet(_ sender: Any) {
     print("\n---------- [ Get Method ] ----------\n")
     let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
+    
+    let url = URL(string: todoEndpoint)!
+    
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        guard error == nil else { return print(error!.localizedDescription) }
+        // client Error
+        guard let response = response as? HTTPURLResponse,
+            (200..<300).contains(response.statusCode),
+            response.mimeType == "application/json"
+            else { return } // server Error
+        guard let data = data else {
+            return print("Error: did not receive data")
+        }
+        guard let todo = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let todoId = todo["id"] as? Int,
+            let todoTitle = todo["title"] as? String
+            else { return print("Could not get parsed data") }
+        print("ID :", todoId)
+        print("Title :", todoTitle)
+    }
+    task.resume()
   }
   
   
   @IBAction func requestPost(_ sender: Any) {
     print("\n---------- [ Post Method ] ----------\n")
     let todoEndpoint = "https://jsonplaceholder.typicode.com/todos"
+    guard let url = URL(string: todoEndpoint) else {
+        return print("Error: cannot create URL")
+    }
+    
+    let newTodo: [String: Any] = [
+        "userId": 1,
+        "title": "My First todo",
+        "completed": false,
+    ]
+    guard let encodedTodo = try? JSONSerialization.data(withJSONObject: newTodo) else { return }
+    
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = "POST"
+    urlRequest.httpBody = encodedTodo
+    
+    let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        guard error == nil else { return print(error?.localizedDescription) }
+        guard let data = data else { return print("Error: did not receive data") }
+        
+        guard let receivedTodo = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return print("Could not get parsed data")}
+        
+        print(receivedTodo)
+    }
+    task.resume()
   }
   
   
   @IBAction func requestDelete(_ sender: Any) {
     print("\n---------- [ Delete Method ] ----------\n")
     let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
+    
+    let url = URL(string: todoEndpoint)!
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = "DELETE"
+    
+    let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        guard error == nil else { return print(error!) }
+        guard let response = response as? HTTPURLResponse,
+            200..<300 ~= response.statusCode else { return }
+        
+        
+        guard let _ = data else { return print("Error: did not receive data")}
+        print(response.statusCode)   // 200 OK
+        print("DELETE ok")
+    }
+    task.resume()
   }
 }
 
