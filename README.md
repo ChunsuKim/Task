@@ -232,3 +232,6 @@ FastCampus Assignment commit
 
 *2019/ 06/ 07 수업자료 - URL Loading System.pdf - URL Loading System 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/URL%20Loading%20System.pdf)
+
+* 2019/ 06/ 07 실습 - URLSessionExample (Starter) - URL Session
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/URLSessionExample%20(Starter)/URLSessionExample/ViewController.swift)
