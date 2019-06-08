@@ -8,6 +8,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 05 수업자료 컴퓨터 개론.pdf - 컴퓨터 개론 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B0%9C%EB%A1%A0.pdf)
 
+* 2019/ 03/ 07 수업자료 git.pdf - Git에 관한 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/git.pdf)
+
 * 2019/ 03/ 11 수업자료 Basics(1) - 변수, 상수, 자료형, 타입추론
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Basics(1).playground/Pages)
 
