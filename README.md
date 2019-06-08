@@ -244,3 +244,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 07 실습 - URLSessionExample (Starter) - URL Session
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/URLSessionExample%20(Starter)/URLSessionExample/ViewController.swift)
+
+* 2019/ 06/ 07 실습 - AlamofireExample - Alamofire 사용방법 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/AlamofireExample/AlamofireExample/ViewController.swift)
