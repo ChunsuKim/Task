@@ -13,7 +13,7 @@
 		F3605BC022ABD1AD0011F565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3605BBF22ABD1AD0011F565 /* Assets.xcassets */; };
 		F3605BC322ABD1AD0011F565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3605BC122ABD1AD0011F565 /* LaunchScreen.storyboard */; };
 		F3605BCB22ABD1D50011F565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3605BCA22ABD1D50011F565 /* ViewController.swift */; };
-		F39E256E22ACE43C0050A2F0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E256D22ACE43C0050A2F0 /* Data.swift */; };
+		F39E256E22ACE43C0050A2F0 /* MusicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E256D22ACE43C0050A2F0 /* MusicData.swift */; };
 		F39E257022ACEDC30050A2F0 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E256F22ACEDC30050A2F0 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		F3605BC222ABD1AD0011F565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3605BC422ABD1AD0011F565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3605BCA22ABD1D50011F565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F39E256D22ACE43C0050A2F0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F39E256D22ACE43C0050A2F0 /* MusicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicData.swift; sourceTree = "<group>"; };
 		F39E256F22ACEDC30050A2F0 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				F3605BB822ABD1AD0011F565 /* AppDelegate.swift */,
-				F39E256D22ACE43C0050A2F0 /* Data.swift */,
+				F39E256D22ACE43C0050A2F0 /* MusicData.swift */,
 				F3605BCA22ABD1D50011F565 /* ViewController.swift */,
 				F39E256F22ACEDC30050A2F0 /* MainTableViewCell.swift */,
 				F3605BBC22ABD1AD0011F565 /* Main.storyboard */,
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3605BCB22ABD1D50011F565 /* ViewController.swift in Sources */,
-				F39E256E22ACE43C0050A2F0 /* Data.swift in Sources */,
+				F39E256E22ACE43C0050A2F0 /* MusicData.swift in Sources */,
 				F39E257022ACEDC30050A2F0 /* MainTableViewCell.swift in Sources */,
 				F3605BB922ABD1AD0011F565 /* AppDelegate.swift in Sources */,
 			);

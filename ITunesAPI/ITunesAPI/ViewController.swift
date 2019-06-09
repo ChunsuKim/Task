@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private let iTunesSearchTableView = UITableView()
-    private var url = "https://itunes.apple.com/search?media=music&entity=song&term="
+    private var url = "https://itunes.apple.com/search?media=music&entity=song&term=*"
     var urlMusicData: [MusicData] = []
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                 case .success(let data):
                     do {
                         let musicData = try JSONDecoder().decode(Music.self, from: data)
-                        self.urlMusicData = musicData.result
+                        self.urlMusicData = musicData.results
                         DispatchQueue.main.async {
                             self.iTunesSearchTableView.reloadData()
                         }
@@ -104,6 +104,9 @@ extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         print("스코프가 눌렸음")
         
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         url = "https://itunes.apple.com/search?media=music&entity=song&term=" + text
         getData()
