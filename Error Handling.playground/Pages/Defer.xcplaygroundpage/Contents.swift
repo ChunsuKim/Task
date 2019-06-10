@@ -22,6 +22,7 @@ func deferExample() {
   do {
     print("2) Do")
     try throwError()
+//    try? throwError()
   } catch {
     return print("3) Error :", error)
   }
