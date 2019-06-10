@@ -35,8 +35,18 @@ FastCampus Assignment commit
 * 2019/ 03/ 19 과제 Assignment190319 - Class 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190319.playground/Contents.swift)
 
+* 2019/ 03/ 21 수업자료 Access Control - Access Control(접근제한자) PDF파일
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Access%20Control/Access%20Control.pdf)
+
+* 2019/ 03/ 21 실습 Access Control - Access Control(Internal, Fileprivate, Private) 프로젝트 파일
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Access%20Control/AccessControl/AccessControl)
+
+* 2019/ 03/ 21 실습 Access Control - Access Controll playground 파일
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Access%20Control/Access%20Control.playground/Pages)
+
 * 2019/ 03/ 21 과제 Assignment190321 - class 및 상속관련 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190321.playground/Contents.swift)
+
 * 2019/ 03/ 22 과제 190322MyFirstProject_OnOff - 스위치 및 버튼구현 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/190322MyFirstProject_OnOff/MyFirstProject/ViewController.swift)
 
