@@ -11,9 +11,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
     private let iTunesSearchTableView = UITableView()
     private var url = "https://itunes.apple.com/search?media=music&entity=song&term=*"
-    var urlMusicData: [MusicData] = []
+    var urlMusicData: [Song] = []
     let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
@@ -27,8 +28,9 @@ class ViewController: UIViewController {
         getData()
     }
     
+    // MARK: - Setting Method
     private func configure() {
-        iTunesSearchTableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.identifier)
+        iTunesSearchTableView.register(ITunesTableViewCell.self, forCellReuseIdentifier: ITunesTableViewCell.identifier)
         iTunesSearchTableView.dataSource = self
         iTunesSearchTableView.rowHeight = 80
         
@@ -50,6 +52,7 @@ class ViewController: UIViewController {
         iTunesSearchTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
+    // MARK: - Data handling Method
     private func getData() {
         let req = AF.request(url)
         req
@@ -58,7 +61,7 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success(let data):
                     do {
-                        let musicData = try JSONDecoder().decode(Music.self, from: data)
+                        let musicData = try JSONDecoder().decode(ITunes.self, from: data)
                         self.urlMusicData = musicData.results
                         DispatchQueue.main.async {
                             self.iTunesSearchTableView.reloadData()
@@ -73,7 +76,7 @@ class ViewController: UIViewController {
     }
 }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -81,7 +84,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ITunesTableViewCell.identifier, for: indexPath) as! ITunesTableViewCell
         let urlString = urlMusicData[indexPath.row].artworkUrl100
         let url = URL(string: urlString)!
         let req = AF.request(url)
@@ -100,6 +104,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Search bar delegate
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         print("스코프가 눌렸음")
