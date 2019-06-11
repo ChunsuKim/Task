@@ -15,12 +15,26 @@ class ViewController: UIViewController {
     let headerView = UIView()
     let headerViewLabel = UILabel()
     let detailTableView = UITableView()
+    // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
+    let tempFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 1
+        
+        return formatter
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configure()
         autoLayout()
+        
+        WeatherDataSource.shared.fetchSummary(lat: 37.498206, lon: 127.02761) {
+            [weak self] in
+            self?.detailTableView.reloadData()
+        }
+        
     }
     
     private func configure() {
@@ -101,12 +115,30 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: DetailHeaderTableViewCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailHeaderTableViewCell.identifier, for: indexPath) as! DetailHeaderTableViewCell
+            
+            if let data = WeatherDataSource.shared.summary?.weather.minutely.first {
+                cell.headerCellWeatherImageView.image = UIImage(named: data.sky.code)
+                cell.headerCellStatusLabel.text = data.sky.name
+                
+                let max = Double(data.temperature.tmax) ?? 0.0
+                let min = Double(data.temperature.tmin) ?? 0.0
+                
+                let maxStr = tempFormatter.string(for: max) ?? "-"
+                let minStr = tempFormatter.string(for: min) ?? "-"
+                
+                cell.headerCellMaxMintempLabel.text = "최대 \(maxStr)º 최소 \(minStr)º"
+                
+                let current = Double(data.temperature.tc) ?? 0.0
+                let currentStr = tempFormatter.string(for: current) ?? "-"
+                
+                cell.headerCellThermometerLabel.text = "\(currentStr)º"
+            }
             
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
         
         return cell
     }
