@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         headerViewLabel.text = "Label"
         dimmingView.backgroundColor = .black
         dimmingView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        
+//        detailTableView.rowHeight = 180
+//        detailTableView.rowHeight = 80
+        detailTableView.dataSource = self
+        detailTableView.separatorStyle = .none
+        detailTableView.allowsSelection = false
+        detailTableView.register(DetailHeaderTableViewCell.self, forCellReuseIdentifier: DetailHeaderTableViewCell.identifier)
+        detailTableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
 
         view.addSubview(backgroundImageView)
         backgroundImageView.addSubview(dimmingView)
@@ -73,4 +81,16 @@ class ViewController: UIViewController {
     }
     
 
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
