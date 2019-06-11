@@ -23,6 +23,12 @@ class ViewController: UIViewController {
         
         return formatter
     }()
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "Ko_kr")
+        return formatter
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,10 @@ class ViewController: UIViewController {
             self?.detailTableView.reloadData()
         }
         
+        WeatherDataSource.shared.fetchForecast(lat: 37.498206, lon: 127.02761) {
+            [weak self] in
+            self?.detailTableView.reloadData()
+        }
     }
     
     private func configure() {
@@ -107,7 +117,7 @@ extension ViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 0
+            return WeatherDataSource.shared.forecastList.count
         default:
             return 0
         }
@@ -139,6 +149,21 @@ extension ViewController: UITableViewDataSource {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
+        
+        let target = WeatherDataSource.shared.forecastList[indexPath.row]
+        
+        dateFormatter.dateFormat = "M.d (E)"
+        cell.dateLabel.text = dateFormatter.string(for: target.date)
+        
+        dateFormatter.dateFormat = "HH:00"
+        cell.timeLabel.text = dateFormatter.string(for: target.date)
+        
+        cell.weatherImageView.image = UIImage(named: target.skyCode)
+        
+        cell.statusLabel.text = target.skyName
+        
+        let tempStr = tempFormatter.string(for: target.temperature) ?? "-"
+        cell.thermometerLabel.text = "\(tempStr)º"
         
         return cell
     }

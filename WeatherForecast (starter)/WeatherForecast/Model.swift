@@ -38,11 +38,18 @@ struct WeatherSummary: Codable {
     let result: Result
 }
 
+struct ForecastData {
+    let date: Date
+    let skyCode: String
+    let skyName: String
+    let temperature: Double
+}
+
 struct Forecast: Codable {
     struct Weather: Codable {
         struct Forecast3Days: Codable {
             struct Fcst3Hour: Codable {
-                struct Sky: Codable {
+                @objcMembers class Sky: NSObject, Codable {
                     let code4hour: String
                     let name4hour: String
                     let code7hour: String
@@ -65,6 +72,8 @@ struct Forecast: Codable {
                     let name31hour: String
                     let code34hour: String
                     let name34hour: String
+                    let code37hour: String
+                    let name37hour: String
                     let code40hour: String
                     let name40hour: String
                     let code43hour: String
@@ -87,7 +96,7 @@ struct Forecast: Codable {
                     let name67hour: String
                 }
                 
-                struct Temperature: Codable {
+                @objcMembers class Temperature: NSObject, Codable {
                     let temp4hour: String
                     let temp7hour: String
                     let temp10hour: String
@@ -114,6 +123,34 @@ struct Forecast: Codable {
                 
                 let sky: Sky
                 let temperature: Temperature
+                
+                func arrayRepresentation() -> [ForecastData] {
+                    var data = [ForecastData]()
+                    let now = Date()
+                    
+                    for hour in stride(from: 4, to: 67, by: 3) {
+                        var key = "code\(hour)hour"
+                        guard let skyCode = sky.value(forKey: key) as? String else {
+                            continue
+                        }
+                        
+                        key = "name\(hour)hour"
+                        guard let skyName = sky.value(forKey: key) as? String else {
+                            continue
+                        }
+                        
+                        key = "temp\(hour)hour"
+                        let tempStr = temperature.value(forKey: key) as? String ?? "0.0"
+                        guard let temp = Double(tempStr) else { continue }
+                        
+                        let date = now.addingTimeInterval(TimeInterval(hour) * 60 * 60)
+                        
+                        let forecast = ForecastData(date: date, skyCode: skyCode, skyName: skyName, temperature: temp)
+                        data.append(forecast)
+                    }
+                    
+                    return data
+                }
             }
             
             let fcst3hour: Fcst3Hour
@@ -138,7 +175,7 @@ class WeatherDataSource {
     private init() {}
     
     var summary: WeatherSummary?
-    var forecastList = [Any]()
+    var forecastList = [ForecastData]()
     
     func fetchSummary(lat: Double, lon: Double, completion: @escaping () -> ()) {
         
@@ -228,6 +265,9 @@ class WeatherDataSource {
             do {
                 let decoder = JSONDecoder()
                 let forecast = try decoder.decode(Forecast.self, from: data)
+                if let list = forecast.weather.forecast3days.first?.fcst3hour.arrayRepresentation() {
+                    self.forecastList = list
+                }
                 
             } catch {
                 print(error)
