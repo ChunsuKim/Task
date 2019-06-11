@@ -15,6 +15,7 @@
 		F317C41022AF540F009127A3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317C40F22AF540F009127A3 /* Common.swift */; };
 		F317C41222AF7743009127A3 /* DetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317C41122AF7743009127A3 /* DetailHeaderTableViewCell.swift */; };
 		F317C41422AF8444009127A3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317C41322AF8444009127A3 /* DetailTableViewCell.swift */; };
+		F317C41A22AFB87F009127A3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317C41922AFB87F009127A3 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F317C41322AF8444009127A3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		F317C41722AF9BD4009127A3 /* summaryapi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = summaryapi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F317C41822AFB399009127A3 /* forecastapi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = forecastapi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F317C41922AFB87F009127A3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				5213DB1922AD4963007A7E54 /* LaunchScreen.storyboard */,
 				5213DB1C22AD4963007A7E54 /* Info.plist */,
 				5213DB1722AD4963007A7E54 /* Assets.xcassets */,
+				F317C41922AFB87F009127A3 /* Model.swift */,
 			);
 			path = WeatherForecast;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				521C400622AF4559009504B1 /* ViewController.swift in Sources */,
 				F317C41022AF540F009127A3 /* Common.swift in Sources */,
 				F317C41222AF7743009127A3 /* DetailHeaderTableViewCell.swift in Sources */,
+				F317C41A22AFB87F009127A3 /* Model.swift in Sources */,
 				F317C41422AF8444009127A3 /* DetailTableViewCell.swift in Sources */,
 				5213DB1122AD4963007A7E54 /* AppDelegate.swift in Sources */,
 			);
