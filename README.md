@@ -14,6 +14,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 07 수업자료 git.pdf - Git의 배경지식과 사용법에 관한 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/git.pdf)
 
+* 2019/ 03/ 08 수업자료 GoogleSearchOption.pdf - 구글 검색 옵션 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/GoogleSearchOption.pdf)
+
 * 2019/ 03/ 11 수업자료 Basics(1) - 변수, 상수, 자료형, 타입추론
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Basics(1).playground/Pages)
 
