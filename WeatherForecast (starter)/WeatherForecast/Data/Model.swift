@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct WeatherSummary: Codable {
     struct Weather: Codable {
@@ -176,6 +177,29 @@ class WeatherDataSource {
     
     var summary: WeatherSummary?
     var forecastList = [ForecastData]()
+    
+    let group = DispatchGroup()
+    let workQueue = DispatchQueue(label: "apiQueue", attributes: .concurrent)
+    
+    func fetch(location: CLLocation, completion: @escaping () -> ()) {
+        group.enter()
+        workQueue.async {
+            self.fetchSummary(lat: location.coordinate.latitude, lon: location.coordinate.longitude, completion: {
+                self.group.leave()
+            })
+        }
+        
+        group.enter()
+        workQueue.async {
+            self.fetchForecast(lat: location.coordinate.latitude, lon: location.coordinate.longitude, completion: {
+                self.group.leave()
+            })
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion()
+        }
+    }
     
     func fetchSummary(lat: Double, lon: Double, completion: @escaping () -> ()) {
         

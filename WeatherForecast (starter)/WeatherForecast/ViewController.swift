@@ -12,7 +12,6 @@ import CoreLocation
 
 class ViewController: UIViewController {
     
-    lazy var locationManager = CLLocationManager()
     
     let backgroundImageView = UIImageView()
     let dimmingView = UIView()
@@ -20,6 +19,13 @@ class ViewController: UIViewController {
     let headerViewLocationLabel = UILabel()
     let detailTableView = UITableView()
     var topInset: CGFloat = 0.0
+    
+    lazy var locationManager: CLLocationManager = {
+       let m = CLLocationManager()
+        m.delegate = self
+        return m
+    }()
+    
     
     // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
     let tempFormatter: NumberFormatter = {
@@ -42,15 +48,15 @@ class ViewController: UIViewController {
         configure()
         autoLayout()
         
-        WeatherDataSource.shared.fetchSummary(lat: 37.498206, lon: 127.02761) {
-            [weak self] in
-            self?.detailTableView.reloadData()
-        }
-        
-        WeatherDataSource.shared.fetchForecast(lat: 37.498206, lon: 127.02761) {
-            [weak self] in
-            self?.detailTableView.reloadData()
-        }
+//        WeatherDataSource.shared.fetchSummary(lat: 37.498206, lon: 127.02761) {
+//            [weak self] in
+//            self?.detailTableView.reloadData()
+//        }
+//
+//        WeatherDataSource.shared.fetchForecast(lat: 37.498206, lon: 127.02761) {
+//            [weak self] in
+//            self?.detailTableView.reloadData()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,8 +91,6 @@ class ViewController: UIViewController {
     }
     
     private func configure() {
-        locationManager.delegate = self
-        
         backgroundImageView.image = UIImage(named: "sunny")
         headerView.backgroundColor = .clear
         headerViewLocationLabel.textColor = .white
@@ -229,6 +233,10 @@ extension ViewController: CLLocationManagerDelegate {
                         self?.headerViewLocationLabel.text = place.name
                     }
                 }
+            }
+            
+            WeatherDataSource.shared.fetch(location: loc) {
+                self.detailTableView.reloadData()
             }
         }
         
