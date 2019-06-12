@@ -266,3 +266,9 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 08 과제 - ITunesAPI - Alamofire를 활용하여 iTunesAPI를 받아와 TableView에 띄우기 searchbar 사용
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/ITunesAPI/ITunesAPI)
+
+* 2019/ 06/ 10 실습 - WeatherForecast (starter) - T Developers API를 활용하여 날씨 정보 앱만들기
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/WeatherForecast%20(starter)/WeatherForecast)
+
+* 2019/ 06/ 11 실습 - ITunesAPI_MusicPlayer - iTunesAPI를 활용하여 음악 재생하기
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/ITunesAPI_MusicPlayer/MusicAppExample)
