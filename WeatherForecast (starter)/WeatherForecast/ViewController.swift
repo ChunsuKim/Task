@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class ViewController: UIViewController {
+    
+    lazy var locationManager = CLLocationManager()
     
     let backgroundImageView = UIImageView()
     let dimmingView = UIView()
     let headerView = UIView()
-    let headerViewLabel = UILabel()
+    let headerViewLocationLabel = UILabel()
     let detailTableView = UITableView()
+    var topInset: CGFloat = 0.0
+    
     // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
     let tempFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -47,7 +53,24 @@ class ViewController: UIViewController {
         }
     }
     
-    var topInset: CGFloat = 0.0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        headerViewLocationLabel.text = "Updating..."
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedWhenInUse, .authorizedAlways:
+                updateCurrentLocation()
+            case .denied, .restricted:
+                show(message: "위치 서비스 사용 불가")
+            }
+        } else {
+            show(message: "위치 서비스 사용 불가")
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -62,12 +85,14 @@ class ViewController: UIViewController {
     }
     
     private func configure() {
+        locationManager.delegate = self
+        
         backgroundImageView.image = UIImage(named: "sunny")
         headerView.backgroundColor = .clear
-        headerViewLabel.textColor = .white
-        headerViewLabel.font = UIFont.systemFont(ofSize: 20)
-        headerViewLabel.textAlignment = .center
-        headerViewLabel.text = "Label"
+        headerViewLocationLabel.textColor = .white
+        headerViewLocationLabel.font = UIFont.systemFont(ofSize: 20)
+        headerViewLocationLabel.textAlignment = .center
+        headerViewLocationLabel.text = "Label"
         dimmingView.backgroundColor = .black
         dimmingView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         
@@ -85,7 +110,7 @@ class ViewController: UIViewController {
         backgroundImageView.isUserInteractionEnabled = true
         backgroundImageView.addSubview(dimmingView)
         backgroundImageView.addSubview(headerView)
-        headerView.addSubview(headerViewLabel)
+        headerView.addSubview(headerViewLocationLabel)
         backgroundImageView.addSubview(detailTableView)
     }
 
@@ -102,21 +127,21 @@ class ViewController: UIViewController {
         headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         headerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        headerViewLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerViewLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        headerViewLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor).isActive = true
-        headerViewLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
-        headerViewLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        headerViewLocationLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerViewLocationLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
+        headerViewLocationLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor).isActive = true
+        headerViewLocationLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
+        headerViewLocationLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         
         detailTableView.translatesAutoresizingMaskIntoConstraints = false
-        detailTableView.topAnchor.constraint(equalTo: headerViewLabel.bottomAnchor).isActive = true
-        detailTableView.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor).isActive = true
-        detailTableView.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor).isActive = true
+        detailTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        detailTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        detailTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         detailTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         dimmingView.translatesAutoresizingMaskIntoConstraints = false
-        dimmingView.centerXAnchor.constraint(equalTo: backgroundImageView.centerXAnchor).isActive = true
-        dimmingView.centerYAnchor.constraint(equalTo: backgroundImageView.centerYAnchor).isActive = true
+        dimmingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        dimmingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         dimmingView.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor).isActive = true
         dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
     }
@@ -128,7 +153,7 @@ extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -154,7 +179,7 @@ extension ViewController: UITableViewDataSource {
                 let maxStr = tempFormatter.string(for: max) ?? "-"
                 let minStr = tempFormatter.string(for: min) ?? "-"
                 
-                cell.headerCellMaxMintempLabel.text = "최대 \(maxStr)º 최소 \(minStr)º"
+                cell.headerCellMaxMintempLabel.text = "최대 \(maxStr)º   최소 \(minStr)º"
                 
                 let current = Double(data.temperature.tc) ?? 0.0
                 let currentStr = tempFormatter.string(for: current) ?? "-"
@@ -184,6 +209,40 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    func updateCurrentLocation() {
+        locationManager.startUpdatingLocation()
+    }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+        manager.stopUpdatingLocation()
+    }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        show(message: error.localizedDescription)
+        manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            updateCurrentLocation()
+        default:
+            break
+        }
+    }
+}
+
+extension UIViewController {
+    func show(message: String) {
+        let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

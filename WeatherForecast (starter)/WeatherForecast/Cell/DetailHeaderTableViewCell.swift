@@ -60,7 +60,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
         
         headerCellWeatherImageView.translatesAutoresizingMaskIntoConstraints = false
         headerCellWeatherImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor).isActive = true
-        headerCellWeatherImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        headerCellWeatherImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         headerCellWeatherImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         headerCellWeatherImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
@@ -71,13 +71,13 @@ class DetailHeaderTableViewCell: UITableViewCell {
         headerCellStatusLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
         
         headerCellMaxMintempLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerCellMaxMintempLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        headerCellMaxMintempLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         headerCellMaxMintempLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
         headerCellMaxMintempLabel.topAnchor.constraint(equalTo: headerCellWeatherImageView.bottomAnchor, constant: 10).isActive = true
         headerCellMaxMintempLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .vertical)
         
         headerCellThermometerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerCellThermometerLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        headerCellThermometerLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         headerCellThermometerLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
         headerCellThermometerLabel.topAnchor.constraint(equalTo: headerCellMaxMintempLabel.bottomAnchor, constant: 10).isActive = true
         headerCellThermometerLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true

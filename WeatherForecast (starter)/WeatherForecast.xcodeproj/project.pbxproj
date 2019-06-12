@@ -64,16 +64,15 @@
 		5213DB0F22AD4963007A7E54 /* WeatherForecast */ = {
 			isa = PBXGroup;
 			children = (
+				F3D7CC9C22B0E40500EBAF10 /* Data */,
 				F317C41622AF9B93009127A3 /* Prototype */,
 				5213DB1022AD4963007A7E54 /* AppDelegate.swift */,
 				521C400522AF4559009504B1 /* ViewController.swift */,
 				F317C41522AF8EB8009127A3 /* Cell */,
-				F317C40F22AF540F009127A3 /* Common.swift */,
 				5213DB1422AD4963007A7E54 /* Main.storyboard */,
 				5213DB1922AD4963007A7E54 /* LaunchScreen.storyboard */,
 				5213DB1C22AD4963007A7E54 /* Info.plist */,
 				5213DB1722AD4963007A7E54 /* Assets.xcassets */,
-				F317C41922AFB87F009127A3 /* Model.swift */,
 			);
 			path = WeatherForecast;
 			sourceTree = "<group>";
@@ -94,6 +93,15 @@
 				F317C41822AFB399009127A3 /* forecastapi.playground */,
 			);
 			path = Prototype;
+			sourceTree = "<group>";
+		};
+		F3D7CC9C22B0E40500EBAF10 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F317C41922AFB87F009127A3 /* Model.swift */,
+				F317C40F22AF540F009127A3 /* Common.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

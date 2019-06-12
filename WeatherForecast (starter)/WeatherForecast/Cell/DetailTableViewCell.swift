@@ -74,7 +74,7 @@ class DetailTableViewCell: UITableViewCell {
         
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.centerYAnchor.constraint(equalTo: thermometerLabel.centerYAnchor).isActive = true
-        statusLabel.trailingAnchor.constraint(equalTo: thermometerLabel.leadingAnchor, constant: -10).isActive = true
+        statusLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         
         weatherImageView.translatesAutoresizingMaskIntoConstraints = false
         weatherImageView.centerYAnchor.constraint(equalTo: statusLabel.centerYAnchor).isActive = true
@@ -85,12 +85,14 @@ class DetailTableViewCell: UITableViewCell {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        dateLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+//        dateLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
         
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 5).isActive = true
         timeLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        timeLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
+        timeLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+//        timeLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
     }
 
 }
