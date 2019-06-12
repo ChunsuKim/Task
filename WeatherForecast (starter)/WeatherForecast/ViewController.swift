@@ -217,7 +217,20 @@ extension ViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        if let loc = locations.first {
+            print(loc.coordinate)
+            
+            let decoder = CLGeocoder()
+            decoder.reverseGeocodeLocation(loc) { [weak self] (placemarks, error) in
+                if let place = placemarks?.first {
+                    if let gu = place.locality, let dong = place.subLocality {
+                        self?.headerViewLocationLabel.text = "\(gu) \(dong)"
+                    } else {
+                        self?.headerViewLocationLabel.text = place.name
+                    }
+                }
+            }
+        }
         
         manager.stopUpdatingLocation()
     }

@@ -32,6 +32,7 @@
 		F317C41722AF9BD4009127A3 /* summaryapi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = summaryapi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F317C41822AFB399009127A3 /* forecastapi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = forecastapi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F317C41922AFB87F009127A3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F3D7CC9D22B0EF6E00EBAF10 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				F317C41622AF9B93009127A3 /* Prototype */,
 				5213DB1022AD4963007A7E54 /* AppDelegate.swift */,
 				521C400522AF4559009504B1 /* ViewController.swift */,
+				F3D7CC9D22B0EF6E00EBAF10 /* Location.gpx */,
 				F317C41522AF8EB8009127A3 /* Cell */,
 				5213DB1422AD4963007A7E54 /* Main.storyboard */,
 				5213DB1922AD4963007A7E54 /* LaunchScreen.storyboard */,
