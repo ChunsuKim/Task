@@ -47,6 +47,20 @@ class ViewController: UIViewController {
         }
     }
     
+    var topInset: CGFloat = 0.0
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if topInset == 0.0 {
+            let first = IndexPath(row: 0, section: 0)
+            if let cell = detailTableView.cellForRow(at: first) {
+                topInset = detailTableView.frame.height - cell.frame.height
+                detailTableView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+            }
+        }
+    }
+    
     private func configure() {
         backgroundImageView.image = UIImage(named: "sunny")
         headerView.backgroundColor = .clear
@@ -62,10 +76,13 @@ class ViewController: UIViewController {
         detailTableView.dataSource = self
         detailTableView.separatorStyle = .none
         detailTableView.allowsSelection = false
+        detailTableView.showsVerticalScrollIndicator = false
+        detailTableView.backgroundColor = UIColor.clear
         detailTableView.register(DetailHeaderTableViewCell.self, forCellReuseIdentifier: DetailHeaderTableViewCell.identifier)
         detailTableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
 
         view.addSubview(backgroundImageView)
+        backgroundImageView.isUserInteractionEnabled = true
         backgroundImageView.addSubview(dimmingView)
         backgroundImageView.addSubview(headerView)
         headerView.addSubview(headerViewLabel)

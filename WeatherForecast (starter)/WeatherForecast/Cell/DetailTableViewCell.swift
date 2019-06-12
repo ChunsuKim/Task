@@ -22,6 +22,12 @@ class DetailTableViewCell: UITableViewCell {
         
         configure()
         autoLayout()
+        backgroundColor = UIColor.clear
+        
+        statusLabel.textColor = UIColor.white
+        dateLabel.textColor = statusLabel.textColor
+        timeLabel.textColor = statusLabel.textColor
+        thermometerLabel.textColor = statusLabel.textColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +37,7 @@ class DetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,7 +46,7 @@ class DetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func configure() {
+    func configure() {
         thermometerLabel.text = "00"
         thermometerLabel.font = UIFont.systemFont(ofSize: 40, weight: .thin)
         statusLabel.font = UIFont.systemFont(ofSize: 30)
@@ -54,12 +61,12 @@ class DetailTableViewCell: UITableViewCell {
         contentView.addSubview(timeLabel)
     }
     
-    private func autoLayout() {
+    func autoLayout() {
         
         thermometerLabel.translatesAutoresizingMaskIntoConstraints = false
-        thermometerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        thermometerLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        thermometerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10).isActive = true
+        thermometerLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        thermometerLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        thermometerLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
         thermometerLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
         thermometerLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .vertical)
         thermometerLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
@@ -76,14 +83,14 @@ class DetailTableViewCell: UITableViewCell {
         weatherImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -10).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        dateLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
         
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 5).isActive = true
-        timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        timeLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -10).isActive = true
+        timeLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        timeLabel.trailingAnchor.constraint(greaterThanOrEqualTo: weatherImageView.leadingAnchor, constant: -20).isActive = true
     }
 
 }
