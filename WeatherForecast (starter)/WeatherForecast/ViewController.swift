@@ -84,7 +84,10 @@ class ViewController: UIViewController {
         if topInset == 0.0 {
             let first = IndexPath(row: 0, section: 0)
             if let cell = detailTableView.cellForRow(at: first) {
-                topInset = detailTableView.frame.height - cell.frame.height
+                topInset = detailTableView.frame.height + (view.frame.height - 320)
+                print("topInset: , \(detailTableView.frame.height)")
+                print("cell for height: , \(cell.frame.height)")
+                print(view.frame.height)
                 detailTableView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
             }
         }
@@ -97,8 +100,7 @@ class ViewController: UIViewController {
         headerViewLocationLabel.font = UIFont.systemFont(ofSize: 20)
         headerViewLocationLabel.textAlignment = .center
         headerViewLocationLabel.text = "Label"
-        dimmingView.backgroundColor = .black
-        dimmingView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
 //        detailTableView.rowHeight = 180
 //        detailTableView.rowHeight = 80
@@ -139,13 +141,13 @@ class ViewController: UIViewController {
         
         detailTableView.translatesAutoresizingMaskIntoConstraints = false
         detailTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
-        detailTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        detailTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        detailTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        detailTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        detailTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        detailTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         dimmingView.translatesAutoresizingMaskIntoConstraints = false
-        dimmingView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        dimmingView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        dimmingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dimmingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         dimmingView.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor).isActive = true
         dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
     }
