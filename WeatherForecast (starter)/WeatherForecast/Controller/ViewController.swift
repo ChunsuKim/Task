@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-//let test: CLLocation = CLLocation(latitude: 37.498206, longitude: 127.02761)
 
 class ViewController: UIViewController {
     
@@ -46,6 +45,12 @@ class ViewController: UIViewController {
         return formatter
     }()
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        detailTableView.center.x = -view.frame.width
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         headerViewLocationLabel.text = "Updating..."
@@ -65,6 +70,16 @@ class ViewController: UIViewController {
         } else {
             show(message: "위치 서비스 사용 불가")
         }
+//        UIView.setAnimationsEnabled(true)
+//        UIView.animate(withDuration: 2,
+//                       delay: 1,
+//                       usingSpringWithDamping: 0.6,
+//                       initialSpringVelocity: 0,
+//                       options: [.curveEaseInOut],
+//                       animations: {
+//                        let midX = self.detailTableView.superview!.bounds.midX
+//                        self.detailTableView.center.x = midX
+//        })
         
     }
     
@@ -85,10 +100,6 @@ class ViewController: UIViewController {
 //        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       //
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
