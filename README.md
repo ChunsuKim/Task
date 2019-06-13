@@ -270,5 +270,8 @@ FastCampus Assignment commit
 * 2019/ 06/ 10 실습 - WeatherForecast (starter) - T Developers API를 활용하여 날씨 정보 앱만들기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/WeatherForecast%20(starter)/WeatherForecast)
 
-* 2019/ 06/ 11 실습 - ITunesAPI_MusicPlayer - iTunesAPI를 활용하여 음악 재생하기
+* 2019/ 06/ 12 실습 - ITunesAPI_MusicPlayer - iTunesAPI를 활용하여 음악 재생하기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/ITunesAPI_MusicPlayer/MusicAppExample)
+
+* 2019/ 06/ 13 실습 - WeatherForecastAnswer - 날씨앱 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/WeatherForecastAnswer/WeatherForecast)
