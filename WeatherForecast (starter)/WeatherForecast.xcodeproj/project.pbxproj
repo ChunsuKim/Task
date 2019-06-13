@@ -65,11 +65,10 @@
 		5213DB0F22AD4963007A7E54 /* WeatherForecast */ = {
 			isa = PBXGroup;
 			children = (
-				F3D7CC9C22B0E40500EBAF10 /* Data */,
-				F317C41622AF9B93009127A3 /* Prototype */,
 				5213DB1022AD4963007A7E54 /* AppDelegate.swift */,
-				521C400522AF4559009504B1 /* ViewController.swift */,
-				F3D7CC9D22B0EF6E00EBAF10 /* Location.gpx */,
+				F317C41622AF9B93009127A3 /* Prototype */,
+				F3D7CC9C22B0E40500EBAF10 /* Data */,
+				F3CD58C122B22772001286FC /* Controller */,
 				F317C41522AF8EB8009127A3 /* Cell */,
 				5213DB1422AD4963007A7E54 /* Main.storyboard */,
 				5213DB1922AD4963007A7E54 /* LaunchScreen.storyboard */,
@@ -97,9 +96,18 @@
 			path = Prototype;
 			sourceTree = "<group>";
 		};
+		F3CD58C122B22772001286FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521C400522AF4559009504B1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F3D7CC9C22B0E40500EBAF10 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F3D7CC9D22B0EF6E00EBAF10 /* Location.gpx */,
 				F317C41922AFB87F009127A3 /* Model.swift */,
 				F317C40F22AF540F009127A3 /* Common.swift */,
 			);

@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+//let test: CLLocation = CLLocation(latitude: 37.498206, longitude: 127.02761)
 
 class ViewController: UIViewController {
     
@@ -17,15 +18,17 @@ class ViewController: UIViewController {
     let dimmingView = UIView()
     let headerView = UIView()
     let headerViewLocationLabel = UILabel()
+    let headerDateLabel = UILabel()
+    let refreshButton = UIButton(type: .custom)
     let detailTableView = UITableView()
     var topInset: CGFloat = 0.0
     
     lazy var locationManager: CLLocationManager = {
-       let m = CLLocationManager()
-        m.delegate = self
-        return m
+       let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        return locationManager
     }()
-    
+
     
     // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
     let tempFormatter: NumberFormatter = {
@@ -42,6 +45,28 @@ class ViewController: UIViewController {
         return formatter
     }()
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        headerViewLocationLabel.text = "Updating..."
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedWhenInUse, .authorizedAlways:
+                updateCurrentLocation()
+                break
+            case .denied, .restricted:
+                show(message: "위치 서비스 사용 불가")
+            @unknown default:
+                break
+            }
+        } else {
+            show(message: "위치 서비스 사용 불가")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,21 +86,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        headerViewLocationLabel.text = "Updating..."
-        
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .authorizedWhenInUse, .authorizedAlways:
-                updateCurrentLocation()
-            case .denied, .restricted:
-                show(message: "위치 서비스 사용 불가")
-            }
-        } else {
-            show(message: "위치 서비스 사용 불가")
-        }
+       //
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,30 +105,42 @@ class ViewController: UIViewController {
     }
     
     private func configure() {
+        dateSetting()
+        
+        // UI configuration
         backgroundImageView.image = UIImage(named: "sunny")
+        backgroundImageView.image = backgroundImage()
         headerView.backgroundColor = .clear
         headerViewLocationLabel.textColor = .white
         headerViewLocationLabel.font = UIFont.systemFont(ofSize: 20)
         headerViewLocationLabel.textAlignment = .center
         headerViewLocationLabel.text = "Label"
         dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        refreshButton.setBackgroundImage(UIImage(named: "SKY_S00"), for: .normal)
+        refreshButton.isEnabled = true
+        refreshButton.addTarget(self, action: #selector(refreshButtonDidTap(_:)), for: .touchUpInside)
         
-//        detailTableView.rowHeight = 180
-//        detailTableView.rowHeight = 80
+        // tableView configuration
         detailTableView.dataSource = self
         detailTableView.separatorStyle = .none
         detailTableView.allowsSelection = false
         detailTableView.showsVerticalScrollIndicator = false
         detailTableView.backgroundColor = UIColor.clear
+        
+        // Custom Cell register
         detailTableView.register(DetailHeaderTableViewCell.self, forCellReuseIdentifier: DetailHeaderTableViewCell.identifier)
         detailTableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
 
+        // addsubview
         view.addSubview(backgroundImageView)
         backgroundImageView.isUserInteractionEnabled = true
         backgroundImageView.addSubview(dimmingView)
         backgroundImageView.addSubview(headerView)
         headerView.addSubview(headerViewLocationLabel)
+        headerView.addSubview(headerDateLabel)
+        headerView.addSubview(refreshButton)
         backgroundImageView.addSubview(detailTableView)
+        headerView.bringSubviewToFront(refreshButton)
     }
 
     private func autoLayout() {
@@ -137,7 +160,18 @@ class ViewController: UIViewController {
         headerViewLocationLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
         headerViewLocationLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor).isActive = true
         headerViewLocationLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
-        headerViewLocationLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        headerViewLocationLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        
+        headerDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerDateLabel.topAnchor.constraint(equalTo: headerViewLocationLabel.bottomAnchor).isActive = true
+        headerDateLabel.widthAnchor.constraint(equalTo: headerViewLocationLabel.widthAnchor).isActive = true
+        headerDateLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        
+        refreshButton.translatesAutoresizingMaskIntoConstraints = false
+        refreshButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+        refreshButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10).isActive = true
+        refreshButton.widthAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.6).isActive = true
+        refreshButton.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.6).isActive = true
         
         detailTableView.translatesAutoresizingMaskIntoConstraints = false
         detailTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
@@ -150,6 +184,54 @@ class ViewController: UIViewController {
         dimmingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         dimmingView.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor).isActive = true
         dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
+    }
+    
+    @objc private func refreshButtonDidTap(_ sender: UIButton) {
+        detailTableView.reloadData()
+        updateCurrentLocation()
+        dateSetting()
+        DispatchQueue.main.async {
+            self.backgroundImageView.image = self.backgroundImage()
+        }
+    }
+    
+    private func dateSetting() {
+        headerDateLabel.text = "6.13 (목) 12:00"
+        headerDateLabel.textAlignment = .center
+        headerDateLabel.font = UIFont.systemFont(ofSize: 14)
+        headerDateLabel.textColor = .white
+        headerDateLabel.text = todayDate()
+    }
+    
+    private func todayDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M.d (E) HH:mm"
+        formatter.locale = Locale(identifier: "Ko_kr")
+        let now = Date()
+        let dateString = formatter.string(from: now)
+        return dateString
+    }
+    
+    private func backgroundImage() -> UIImage {
+        var backgroundImage = UIImage()
+        if let data = WeatherDataSource.shared.summary?.weather.minutely.first {
+            switch data.sky.code {
+            case "SKY_A01", "SKY_A02":
+                backgroundImage = UIImage(named: "sunny")! // ?? UIImage(name: "sunny")
+            case "SKY_A03", "SKY_A07":
+                backgroundImage = UIImage(named: "cloudy")!
+            case "SKY_A04", "SKY_A05", "SKY_A06", "SKY_A08", "SKY_A09", "SKY_A10":
+                backgroundImage = UIImage(named: "rainy")!
+            case "SKY_A11", "SKY_A12", "SKY_A13", "SKY_A14":
+                backgroundImage = UIImage(named: "lightning")!
+            default:
+                backgroundImage = UIImage(named: "sunny")!
+            }
+        } else {
+            backgroundImage = UIImage(named: "sunny")!
+        }
+        
+        return backgroundImage
     }
     
 
@@ -219,7 +301,13 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: CLLocationManagerDelegate {
     func updateCurrentLocation() {
+        let status = CLLocationManager.authorizationStatus()
+        guard status == .authorizedAlways || status == .authorizedWhenInUse,
+            CLLocationManager.locationServicesEnabled() else { return }
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+//        locationManager.requestLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

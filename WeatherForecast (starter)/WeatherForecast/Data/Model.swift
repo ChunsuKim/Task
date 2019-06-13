@@ -204,9 +204,9 @@ class WeatherDataSource {
     func fetchSummary(lat: Double, lon: Double, completion: @escaping () -> ()) {
         
         
-        let apiUrl = "https://api2.sktelecom.com/weather/current/minutely?version=1&lat=\(lat)&lon=\(lon)&appKey=\(appKey)"
+        let apiUrl = "https://api2.sktelecom.com/weather/current/minutely?version=1&lat=\(lat)&lon=\(lon)&appKey=\(appKey1)"
         
-        let url = URL(string: apiUrl)!
+        guard let url = URL(string: apiUrl) else { return }
         
         let session = URLSession.shared
         
@@ -253,9 +253,9 @@ class WeatherDataSource {
         forecastList.removeAll()
         
         
-        let apiUrl = "https://api2.sktelecom.com/weather/forecast/3days?version=1&lat=\(lat)&lon=\(lon)&appKey=\(appKey)"
+        let apiUrl = "https://api2.sktelecom.com/weather/forecast/3days?version=1&lat=\(lat)&lon=\(lon)&appKey=\(appKey1)"
         
-        let url = URL(string: apiUrl)!
+        guard let url = URL(string: apiUrl) else { return }
         
         let session = URLSession.shared
         
