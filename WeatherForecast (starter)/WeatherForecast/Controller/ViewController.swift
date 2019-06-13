@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     
     
     let backgroundImageView = UIImageView()
-    let dimmingView = UIView()
+//    let dimmingView = UIView()
     let headerView = UIView()
     let headerViewLocationLabel = UILabel()
     let headerDateLabel = UILabel()
     let refreshButton = UIButton(type: .custom)
     let detailTableView = UITableView()
+    let blurredView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     var topInset: CGFloat = 0.0
     
     lazy var locationManager: CLLocationManager = {
@@ -108,14 +109,13 @@ class ViewController: UIViewController {
         dateSetting()
         
         // UI configuration
-        backgroundImageView.image = UIImage(named: "sunny")
         backgroundImageView.image = backgroundImage()
         headerView.backgroundColor = .clear
         headerViewLocationLabel.textColor = .white
         headerViewLocationLabel.font = UIFont.systemFont(ofSize: 20)
         headerViewLocationLabel.textAlignment = .center
         headerViewLocationLabel.text = "Label"
-        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+//        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         refreshButton.setBackgroundImage(UIImage(named: "SKY_S00"), for: .normal)
         refreshButton.isEnabled = true
         refreshButton.addTarget(self, action: #selector(refreshButtonDidTap(_:)), for: .touchUpInside)
@@ -124,8 +124,11 @@ class ViewController: UIViewController {
         detailTableView.dataSource = self
         detailTableView.separatorStyle = .none
         detailTableView.allowsSelection = false
+        detailTableView.delegate = self
         detailTableView.showsVerticalScrollIndicator = false
         detailTableView.backgroundColor = UIColor.clear
+        blurredView.alpha = 0
+//        blurredView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Custom Cell register
         detailTableView.register(DetailHeaderTableViewCell.self, forCellReuseIdentifier: DetailHeaderTableViewCell.identifier)
@@ -134,12 +137,13 @@ class ViewController: UIViewController {
         // addsubview
         view.addSubview(backgroundImageView)
         backgroundImageView.isUserInteractionEnabled = true
-        backgroundImageView.addSubview(dimmingView)
-        backgroundImageView.addSubview(headerView)
+//        backgroundImageView.addSubview(dimmingView)
+        backgroundImageView.addSubview(detailTableView)
+        view.addSubview(headerView)
+        backgroundImageView.insertSubview(blurredView, belowSubview: detailTableView)
         headerView.addSubview(headerViewLocationLabel)
         headerView.addSubview(headerDateLabel)
         headerView.addSubview(refreshButton)
-        backgroundImageView.addSubview(detailTableView)
         headerView.bringSubviewToFront(refreshButton)
     }
 
@@ -179,11 +183,13 @@ class ViewController: UIViewController {
         detailTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         detailTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        dimmingView.translatesAutoresizingMaskIntoConstraints = false
-        dimmingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        dimmingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        dimmingView.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor).isActive = true
-        dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
+        blurredView.frame = self.view.bounds
+        
+//        dimmingView.translatesAutoresizingMaskIntoConstraints = false
+//        dimmingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        dimmingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        dimmingView.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor).isActive = true
+//        dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
     }
     
     @objc private func refreshButtonDidTap(_ sender: UIButton) {
@@ -235,6 +241,15 @@ class ViewController: UIViewController {
     }
     
 
+}
+
+extension ViewController: UITableViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let alpha = (scrollView.contentOffset.y + detailTableView.frame.height - 320) / 300
+        if alpha < 0.5 {
+            blurredView.alpha = alpha
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
