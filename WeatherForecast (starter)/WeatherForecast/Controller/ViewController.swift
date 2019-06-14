@@ -120,7 +120,7 @@ class ViewController: UIViewController {
         dateSetting()
         
         // UI configuration
-        backgroundImageView.image = backgroundImage()
+        backgroundImageView.image = UIImage(named: "sunny")
         headerView.backgroundColor = .clear
         headerViewLocationLabel.textColor = .white
         headerViewLocationLabel.font = UIFont.systemFont(ofSize: 20)
@@ -244,9 +244,9 @@ class ViewController: UIViewController {
             default:
                 backgroundImage = UIImage(named: "sunny")!
             }
-        } else {
-            backgroundImage = UIImage(named: "sunny")!
-        }
+        } //else {
+//            backgroundImage = UIImage(named: "sunny")!
+//        }
         
         return backgroundImage
     }
@@ -353,6 +353,11 @@ extension ViewController: CLLocationManagerDelegate {
             
             WeatherDataSource.shared.fetch(location: loc) {
                 self.detailTableView.reloadData()
+                
+                UIView.transition(with: self.backgroundImageView, duration: 1, options: [.transitionCrossDissolve], animations: {
+                    
+                    self.backgroundImageView.image = self.backgroundImage()
+                })
             }
         }
         
