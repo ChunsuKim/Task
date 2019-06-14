@@ -8,18 +8,18 @@
 
 import Foundation
 
-
+// 샘플 데이터 테스트용 클래스
 final class ForecastServiceStub: ForecastServiceType {
     func fetchCurrentForecast(latitude: Double, longitude: Double, completionHandler: @escaping (Result<CurrentForecast, ServiceError>) -> Void) {
         
-        let data = currentForecastSampleData
+        let data = SampleData.currentForecast
         let forecast = try! CurrentForecast.decode(from: data)
         completionHandler(.success(forecast))
     }
     
     func fetchShortRangeForecast(latitude: Double, longitude: Double, completionHandler: @escaping (Result<[ShortRangeForecast], ServiceError>) -> Void) {
         
-        let data = shortRangeForecastSampleData
+        let data = SampleData.shortRangeForecast
         
         guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let weather = json["weather"] as? [String: Any],

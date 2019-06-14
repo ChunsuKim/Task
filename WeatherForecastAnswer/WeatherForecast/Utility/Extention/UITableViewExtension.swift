@@ -11,12 +11,13 @@ import UIKit
 protocol Identifiable {
     static var identifier: String { get }
 }
-
-extension UITableViewCell: Identifiable {
+extension Identifiable {
     static var identifier: String {
         return String(describing: self)
     }
 }
+extension UITableViewCell: Identifiable { }
+
 
 extension UITableView {
     func register<Cell>(
@@ -30,7 +31,7 @@ extension UITableView {
         guard let cell = dequeueReusableCell(
             withIdentifier: reusableCell.identifier
             ) as? Cell else { fatalError("Could not find cell with identifier") }
-        
         return cell
     }
 }
+

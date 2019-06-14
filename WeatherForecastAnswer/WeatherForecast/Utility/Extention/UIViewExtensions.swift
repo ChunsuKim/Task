@@ -9,7 +9,10 @@
 import UIKit
 
 extension UIView {
-
+    func addSubviews(_ views: UIView...) {
+        views.forEach { addSubview($0) }
+    }
+    
     var parentViewController: UIViewController? {
         var responder: UIResponder? = self
         while let nextResponder = responder?.next {
@@ -20,39 +23,4 @@ extension UIView {
         }
         return nil
     }
-    
-    func addSubviews(_ views: UIView...) {
-        views.forEach { addSubview($0) }
-    }
-    var x: CGFloat {
-        get { return frame.origin.x }
-        set { frame.origin.x = newValue }
-    }
-    var y: CGFloat {
-        get { return frame.origin.y }
-        set { frame.origin.y = newValue }
-    }
-    var width: CGFloat {
-        get { return frame.width }
-        set { frame.size.width = newValue }
-    }
-    var height: CGFloat {
-        get { return frame.height }
-        set { frame.size.height = newValue }
-    }
-    var maxX: CGFloat {
-        return x + width
-    }
-    var maxY: CGFloat {
-        return y + height
-    }
-    var origin: CGPoint {
-        get { return frame.origin }
-        set { frame.origin = newValue }
-    }
-    var size: CGSize {
-        get { return frame.size }
-        set { frame.size = newValue }
-    }
-    
 }

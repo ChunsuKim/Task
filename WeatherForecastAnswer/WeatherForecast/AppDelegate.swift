@@ -15,13 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: .screenBounds)
         window?.backgroundColor = .white
-        let forecastService = ForecastServiceStub()
-        let weatherCastVC = WeatherCasterViewController(
-            forecastService: forecastService
-        )
-        window?.rootViewController = weatherCastVC
+        window?.rootViewController = WeatherCasterViewController()
         window?.makeKeyAndVisible()
         
         return true
