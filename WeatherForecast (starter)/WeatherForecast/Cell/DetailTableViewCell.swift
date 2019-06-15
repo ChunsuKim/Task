@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+final class DetailTableViewCell: UITableViewCell {
     
     static let identifier = "DetailTableViewCell"
     let thermometerLabel = UILabel()

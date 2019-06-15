@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+final class LaunchScreenViewController: UIViewController {
     
     // MARK: - Properties
-    var timer = Timer()
-    let imageView = UIImageView()
-    let titleLabel = UILabel()
-    let activityIndicatorView = UIActivityIndicatorView()
-    let statusLabel = UILabel()
+    private var timer = Timer()
+    private let imageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let activityIndicatorView = UIActivityIndicatorView()
+    private let statusLabel = UILabel()
     
     // MARK: - App Life Cycle
     override func viewDidLoad() {

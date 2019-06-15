@@ -10,18 +10,18 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // MARK: - Properties
-    let backgroundImageView = UIImageView()
+    private let backgroundImageView = UIImageView()
 //    let dimmingView = UIView()
-    let headerView = UIView()
-    let headerViewLocationLabel = UILabel()
-    let headerDateLabel = UILabel()
-    let refreshButton = UIButton(type: .custom)
-    let detailTableView = UITableView()
-    let blurredView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-    var topInset: CGFloat = 0.0
+    private let headerView = UIView()
+    private let headerViewLocationLabel = UILabel()
+    private let headerDateLabel = UILabel()
+    private let refreshButton = UIButton(type: .custom)
+    private let detailTableView = UITableView()
+    private let blurredView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    private var topInset: CGFloat = 0.0
     
     // MARK: - Location storage and delegate
     lazy var locationManager: CLLocationManager = {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 
     
     // MARK: - Number Formatter setting
-    let tempFormatter: NumberFormatter = {
+    private let tempFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
         formatter.minimumFractionDigits = 0
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         return formatter
     }()
     
-    // MARK: - Data Formatter setting
-    let dateFormatter: DateFormatter = {
+    // MARK: - Date Formatter setting
+    private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "Ko_kr")
         return formatter
@@ -108,6 +108,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        // topInset setting
         if topInset == 0.0 {
             let first = IndexPath(row: 0, section: 0)
             if let cell = detailTableView.cellForRow(at: first) {
