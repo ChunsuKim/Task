@@ -275,3 +275,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 13 실습 - WeatherForecastAnswer - 날씨앱 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/WeatherForecastAnswer/WeatherForecast)
+
+* 2019/ 06/ 14 실습 - AnimatedLaunchScreen - Launch(Splash) Screen 커스텀 새로운   ViewController에서 런치스크린처럼 나오게 커스터마이징
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/AnimatedLaunchScreen/AnimatedLaunchScreen)
