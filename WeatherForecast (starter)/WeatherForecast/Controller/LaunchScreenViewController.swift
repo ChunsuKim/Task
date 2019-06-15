@@ -10,13 +10,14 @@ import UIKit
 
 class LaunchScreenViewController: UIViewController {
     
+    // MARK: - Properties
     var timer = Timer()
     let imageView = UIImageView()
     let titleLabel = UILabel()
     let activityIndicatorView = UIActivityIndicatorView()
     let statusLabel = UILabel()
     
-
+    // MARK: - App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +28,7 @@ class LaunchScreenViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(goToMainView), userInfo: nil, repeats: false)
     }
     
+    // MARK: - Configuration
     private func configure() {
         imageView.image = UIImage(named: "sunny")
         titleLabel.text = "Weather Forecast"
@@ -72,6 +74,13 @@ class LaunchScreenViewController: UIViewController {
         
     }
     
+    private func activitiIndicatorOperation() {
+        
+        activityIndicatorView.startAnimating()
+        
+    }
+    
+    // MARK: - Action Methods
     @objc private func goToMainView() {
         timer.invalidate()
         let viewController = ViewController()
@@ -80,11 +89,4 @@ class LaunchScreenViewController: UIViewController {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.hidesWhenStopped = true
     }
-    
-    private func activitiIndicatorOperation() {
-        
-        activityIndicatorView.startAnimating()
-        
-    }
-    
 }

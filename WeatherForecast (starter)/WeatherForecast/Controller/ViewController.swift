@@ -12,7 +12,7 @@ import CoreLocation
 
 class ViewController: UIViewController {
     
-    
+    // MARK: - Properties
     let backgroundImageView = UIImageView()
 //    let dimmingView = UIView()
     let headerView = UIView()
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     let blurredView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     var topInset: CGFloat = 0.0
     
+    // MARK: - Location storage and delegate
     lazy var locationManager: CLLocationManager = {
        let locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -30,21 +31,24 @@ class ViewController: UIViewController {
     }()
 
     
-    // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
+    // MARK: - Number Formatter setting
     let tempFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
+        // 소수점이 0이면 출력하지 않고 소수점이 존재하면 1자리만 출력
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 1
         
         return formatter
     }()
     
+    // MARK: - Data Formatter setting
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "Ko_kr")
         return formatter
     }()
 
+    // MARK: - App Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -116,6 +120,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Configuration
     private func configure() {
         dateSetting()
         
@@ -203,6 +208,7 @@ class ViewController: UIViewController {
 //        dimmingView.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor).isActive = true
     }
     
+    // MARK: - Action and data handling Methods
     @objc private func refreshButtonDidTap(_ sender: UIButton) {
         detailTableView.reloadData()
         updateCurrentLocation()
@@ -254,15 +260,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let alpha = (scrollView.contentOffset.y + detailTableView.frame.height - 320) / 300
-        if alpha < 0.5 {
-            blurredView.alpha = alpha
-        }
-    }
-}
-
+// MARK: - TableView DataSource
 extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -325,6 +323,17 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - TableView Delegate
+extension ViewController: UITableViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let alpha = (scrollView.contentOffset.y + detailTableView.frame.height - 320) / 300
+        if alpha < 0.5 {
+            blurredView.alpha = alpha
+        }
+    }
+}
+
+// MARK: - CLLocation Manager Delegate
 extension ViewController: CLLocationManagerDelegate {
     func updateCurrentLocation() {
         let status = CLLocationManager.authorizationStatus()
@@ -379,6 +388,7 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - AlertController
 extension UIViewController {
     func show(message: String) {
         let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)

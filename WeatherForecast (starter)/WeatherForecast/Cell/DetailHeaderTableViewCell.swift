@@ -10,6 +10,7 @@ import UIKit
 
 class DetailHeaderTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     static let identifier = "DetailHeaderTableViewCell"
     let headerCellWeatherImageView = UIImageView()
     let headerCellStatusLabel = UILabel()
@@ -45,7 +46,8 @@ class DetailHeaderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure() {
+    // MARK: - Properties
+    private func configure() {
         headerCellStatusLabel.font = UIFont.systemFont(ofSize: 30)
         headerCellThermometerLabel.font = UIFont.systemFont(ofSize: 100, weight: .ultraLight)
         
@@ -56,7 +58,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
     
     }
     
-    func autoLayout() {
+    private func autoLayout() {
         
         headerCellWeatherImageView.translatesAutoresizingMaskIntoConstraints = false
         headerCellWeatherImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor).isActive = true
