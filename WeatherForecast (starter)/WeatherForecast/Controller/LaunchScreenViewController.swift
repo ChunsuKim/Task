@@ -16,6 +16,7 @@ final class LaunchScreenViewController: UIViewController {
     private let titleLabel = UILabel()
     private let activityIndicatorView = UIActivityIndicatorView()
     private let statusLabel = UILabel()
+    private let copyRightLabel = UILabel()
     
     // MARK: - App Life Cycle
     override func viewDidLoad() {
@@ -40,11 +41,16 @@ final class LaunchScreenViewController: UIViewController {
         statusLabel.textColor = .white
         statusLabel.textAlignment = .center
         statusLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        copyRightLabel.text = " Copyright (c) 2019. Chunsu Kim. All rights reserved."
+        copyRightLabel.textColor = #colorLiteral(red: 0.009850479662, green: 0.29078269, blue: 0.5762767196, alpha: 1)
+        copyRightLabel.textAlignment = .center
+        copyRightLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
         view.addSubview(imageView)
         imageView.addSubview(titleLabel)
         imageView.addSubview(activityIndicatorView)
         imageView.addSubview(statusLabel)
+        imageView.addSubview(copyRightLabel)
     }
     
     private func autoLayout() {
@@ -72,6 +78,11 @@ final class LaunchScreenViewController: UIViewController {
         statusLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
         statusLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
         
+        copyRightLabel.translatesAutoresizingMaskIntoConstraints = false
+        copyRightLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        copyRightLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        copyRightLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        copyRightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 15).isActive = true
     }
     
     private func activitiIndicatorOperation() {
