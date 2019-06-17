@@ -281,3 +281,9 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 14 실습 - AnimatedLaunchScreen - Launch(Splash) Screen 커스텀 새로운   ViewController에서 런치스크린처럼 나오게 커스터마이징
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/AnimatedLaunchScreen/AnimatedLaunchScreen)
+
+* 2019/ 06/ 17 수업자료 - Sandbox Directory.pdf - Sandbox Directory 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Sandbox%20Directory.pdf)
+
+* 2019/ 06/ 17 실습 - SandboxDirectoryExample (Starter) - Sandbox Directory 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/SandboxDirectoryExample%20(Starter)/SandboxDirectoryExample/ViewController.swift)
