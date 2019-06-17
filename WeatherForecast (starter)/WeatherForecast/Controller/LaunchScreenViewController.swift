@@ -79,10 +79,10 @@ final class LaunchScreenViewController: UIViewController {
         statusLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
         
         copyRightLabel.translatesAutoresizingMaskIntoConstraints = false
-        copyRightLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        copyRightLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        copyRightLabel.leadingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        copyRightLabel.trailingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.trailingAnchor).isActive = true
         copyRightLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        copyRightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 15).isActive = true
+        copyRightLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
     }
     
     private func activitiIndicatorOperation() {

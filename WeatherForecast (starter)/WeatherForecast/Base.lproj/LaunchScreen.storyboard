@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Copyright (c) 2019. Chunsu Kim. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXA-K0-ZYK">
-                                <rect key="frame" x="0.0" y="817" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8gu-Go-GlU"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qnO-MM-mHE" secondAttribute="trailing" id="jis-E3-NiY"/>
                             <constraint firstItem="oXA-K0-ZYK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lJg-zt-HUq"/>
                             <constraint firstItem="qnO-MM-mHE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="sjV-kp-xEn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oXA-K0-ZYK" secondAttribute="bottom" constant="15" id="v4D-7O-s3g"/>
+                            <constraint firstAttribute="bottom" secondItem="oXA-K0-ZYK" secondAttribute="bottom" constant="30" id="v4D-7O-s3g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
