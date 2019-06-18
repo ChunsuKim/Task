@@ -26,6 +26,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 11 과제 Assignment190311 - Function 만들기 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190311.playground/Contents.swift)
 
+* 2019/ 03/ 12 수업자료 Basics(2) - 조건문, 반복문, 튜플, 제어 이전
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Basics(2).playground/Pages)
+
 * 2019/ 03/ 12 실습 20190312_practice - Function practice
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/20190312_practice.playground/Contents.swift)
 
