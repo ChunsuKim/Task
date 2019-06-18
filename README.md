@@ -35,6 +35,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 13 과제 Assignment190313 - Function 만들기 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190313.playground/Contents.swift)
 
+* 2019/ 03/ 14 수업자료 Enumerations and Collection Type (Array, Dictionary, Set)
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/enum%20%26%20collection)
+
 * 2019/ 03/ 14 과제 Assginment190314 - Array, Dictionary, Enum 등 열거형 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190314.playground/Contents.swift)
 
