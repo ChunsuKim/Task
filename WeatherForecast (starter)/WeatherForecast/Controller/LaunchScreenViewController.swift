@@ -12,7 +12,7 @@ final class LaunchScreenViewController: UIViewController {
     
     // MARK: - Properties
     private var timer = Timer()
-    private let imageView = UIImageView()
+    private let backgroundImageView = UIImageView()
     private let titleLabel = UILabel()
     private let activityIndicatorView = UIActivityIndicatorView()
     private let statusLabel = UILabel()
@@ -22,16 +22,16 @@ final class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
-        autoLayout()
-        activitiIndicatorOperation()
+        configureUserInterface()
+        configureConstraints()
+        operateActivitiIndicator()
 
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(goToMainView), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(presentMainView), userInfo: nil, repeats: false)
     }
     
     // MARK: - Configuration
-    private func configure() {
-        imageView.image = UIImage(named: "sunny")
+    private func configureUserInterface() {
+        backgroundImageView.image = UIImage(named: "sunny")
         titleLabel.text = "Weather Forecast"
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
@@ -46,53 +46,53 @@ final class LaunchScreenViewController: UIViewController {
         copyRightLabel.textAlignment = .center
         copyRightLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
-        view.addSubview(imageView)
-        imageView.addSubview(titleLabel)
-        imageView.addSubview(activityIndicatorView)
-        imageView.addSubview(statusLabel)
-        imageView.addSubview(copyRightLabel)
+        view.addSubview(backgroundImageView)
+        backgroundImageView.addSubview(titleLabel)
+        backgroundImageView.addSubview(activityIndicatorView)
+        backgroundImageView.addSubview(statusLabel)
+        backgroundImageView.addSubview(copyRightLabel)
     }
     
-    private func autoLayout() {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    private func configureConstraints() {
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 36).isActive = true
         
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
-        activityIndicatorView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
+        activityIndicatorView.centerXAnchor.constraint(equalTo: backgroundImageView.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: backgroundImageView.centerYAnchor).isActive = true
         activityIndicatorView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         activityIndicatorView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.topAnchor.constraint(equalTo: activityIndicatorView.bottomAnchor, constant: 10).isActive = true
-        statusLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
-        statusLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        statusLabel.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor).isActive = true
+        statusLabel.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor).isActive = true
         statusLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
         
         copyRightLabel.translatesAutoresizingMaskIntoConstraints = false
-        copyRightLabel.leadingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        copyRightLabel.trailingAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        copyRightLabel.leadingAnchor.constraint(equalTo: backgroundImageView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        copyRightLabel.trailingAnchor.constraint(equalTo: backgroundImageView.safeAreaLayoutGuide.trailingAnchor).isActive = true
         copyRightLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         copyRightLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
     }
     
-    private func activitiIndicatorOperation() {
+    private func operateActivitiIndicator() {
         
         activityIndicatorView.startAnimating()
         
     }
     
     // MARK: - Action Methods
-    @objc private func goToMainView() {
+    @objc private func presentMainView() {
         timer.invalidate()
         let viewController = ViewController()
 

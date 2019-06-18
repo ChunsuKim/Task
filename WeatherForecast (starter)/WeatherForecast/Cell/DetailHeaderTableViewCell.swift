@@ -20,8 +20,8 @@ final class DetailHeaderTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        configure()
-        autoLayout()
+        configureCellUserInterface()
+        configureConstraints()
         
         backgroundColor = UIColor.clear
         
@@ -47,7 +47,7 @@ final class DetailHeaderTableViewCell: UITableViewCell {
     }
     
     // MARK: - Properties
-    private func configure() {
+    private func configureCellUserInterface() {
         headerCellStatusLabel.font = UIFont.systemFont(ofSize: 30)
         headerCellThermometerLabel.font = UIFont.systemFont(ofSize: 100, weight: .ultraLight)
         
@@ -58,7 +58,7 @@ final class DetailHeaderTableViewCell: UITableViewCell {
     
     }
     
-    private func autoLayout() {
+    private func configureConstraints() {
         
         headerCellWeatherImageView.translatesAutoresizingMaskIntoConstraints = false
         headerCellWeatherImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor).isActive = true

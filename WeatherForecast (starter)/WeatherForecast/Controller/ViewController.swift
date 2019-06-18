@@ -90,8 +90,8 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure()
-        autoLayout()
+        configureUserInterface()
+        configureConstraints()
         
 //        WeatherDataSource.shared.fetchSummary(lat: 37.498206, lon: 127.02761) {
 //            [weak self] in
@@ -122,8 +122,8 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - Configuration
-    private func configure() {
-        dateSetting()
+    private func configureUserInterface() {
+        configureDateFormat()
         
         // UI configuration
         backgroundImageView.image = UIImage(named: "sunny")
@@ -164,7 +164,7 @@ final class ViewController: UIViewController {
         headerView.bringSubviewToFront(refreshButton)
     }
 
-    private func autoLayout() {
+    private func configureConstraints() {
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -213,21 +213,21 @@ final class ViewController: UIViewController {
     @objc private func refreshButtonDidTap(_ sender: UIButton) {
         detailTableView.reloadData()
         updateCurrentLocation()
-        dateSetting()
+        configureDateFormat()
         DispatchQueue.main.async {
-            self.backgroundImageView.image = self.backgroundImage()
+            self.backgroundImageView.image = self.requestBackgroundImage()
         }
     }
     
-    private func dateSetting() {
+    private func configureDateFormat() {
         headerDateLabel.text = "6.13 (목) 12:00"
         headerDateLabel.textAlignment = .center
         headerDateLabel.font = UIFont.systemFont(ofSize: 14)
         headerDateLabel.textColor = .white
-        headerDateLabel.text = todayDate()
+        headerDateLabel.text = requestTodayDate()
     }
     
-    private func todayDate() -> String {
+    private func requestTodayDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "M.d (E) HH:mm"
         formatter.locale = Locale(identifier: "Ko_kr")
@@ -236,7 +236,7 @@ final class ViewController: UIViewController {
         return dateString
     }
     
-    private func backgroundImage() -> UIImage {
+    private func requestBackgroundImage() -> UIImage {
         var backgroundImage = UIImage()
         if let data = WeatherDataSource.shared.summary?.weather.minutely.first {
             switch data.sky.code {
@@ -366,7 +366,7 @@ extension ViewController: CLLocationManagerDelegate {
                 
                 UIView.transition(with: self.backgroundImageView, duration: 1, options: [.transitionCrossDissolve], animations: {
                     
-                    self.backgroundImageView.image = self.backgroundImage()
+                    self.backgroundImageView.image = self.requestBackgroundImage()
                 })
             }
         }

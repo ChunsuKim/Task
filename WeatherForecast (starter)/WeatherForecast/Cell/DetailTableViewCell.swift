@@ -20,8 +20,8 @@ final class DetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        configure()
-        autoLayout()
+        configureCellUserInterface()
+        configureConstraints()
         backgroundColor = UIColor.clear
         
         statusLabel.textColor = UIColor.white
@@ -46,7 +46,7 @@ final class DetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func configure() {
+    private func configureCellUserInterface() {
         thermometerLabel.text = "00"
         thermometerLabel.font = UIFont.systemFont(ofSize: 40, weight: .thin)
         statusLabel.font = UIFont.systemFont(ofSize: 30)
@@ -61,7 +61,7 @@ final class DetailTableViewCell: UITableViewCell {
         contentView.addSubview(timeLabel)
     }
     
-    private func autoLayout() {
+    private func configureConstraints() {
         
         thermometerLabel.translatesAutoresizingMaskIntoConstraints = false
         thermometerLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
