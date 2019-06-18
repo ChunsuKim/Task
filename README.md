@@ -20,7 +20,7 @@ FastCampus Assignment commit
 * 2019/ 03/ 08 수업자료 GoogleSearchOption.pdf - 구글 검색 옵션 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/GoogleSearchOption.pdf)
 
-* 2019/ 03/ 11 수업자료 Basics(1) - 변수, 상수, 자료형, 타입추론
+* 2019/ 03/ 11 수업자료 Basics(1) - 변수, 상수, 자료형, 타입추론, 기본 연산자, 함수
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Basics(1).playground/Pages)
 
 * 2019/ 03/ 11 과제 Assignment190311 - Function 만들기 과제
