@@ -41,6 +41,12 @@ FastCampus Assignment commit
 * 2019/ 03/ 14 과제 Assginment190314 - Array, Dictionary, Enum 등 열거형 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190314.playground/Contents.swift)
 
+* 2019/ 03/ 15 수업자료 및 실습 Closure - Basic Closure and Trailing Closure
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Closure.playground/Pages/Closure.xcplaygroundpage/Contents.swift)
+
+* 2019/ 03/ 15 수업자료 및 실습 Optioanal - Optional, Optional Binding and Unwrapping, Optional Chaining
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/Optional.playground/Pages/Optionals.xcplaygroundpage/Contents.swift)
+
 * 2019/ 03/ 15 과제 Assginment190315 - Closure and Optional 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190315.playground/Contents.swift)
 
