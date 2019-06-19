@@ -299,3 +299,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 17 실습 - SandboxDirectoryExample (Starter) - Sandbox Directory 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/SandboxDirectoryExample%20(Starter)/SandboxDirectoryExample/ViewController.swift)
+
+* 2019/ 06/ 19 실습 - CustomCollectionAndTapBar - CollectionView 와 TapBar를 이용한 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/CustomCollectionAndTapBar/CustomCollectionAndTapBar)
