@@ -37,9 +37,14 @@ final class GeocodeViewController: UIViewController {
         
         let addr = "\(country) \(administrativeArea) \(locality) \(name)"
         geocoder.geocodeAddressString(addr, completionHandler: { (placeMark, error) in
-        print(placeMark)
+            print(placeMark ?? placeMark as Any)
+            
+//            if error != nil {
+//                return print(error!.localizedDescription)
+//            }
+//
 //            guard let placeMark = placeMark?.first else { return }
-//            print(placeMark.region?.identifier)
+//            print(placeMark.region?.identifier ?? placeMark)
         })
         
     }
