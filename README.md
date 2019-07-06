@@ -77,6 +77,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 21 과제 Assignment190321 - class 및 상속관련 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190321.playground/Contents.swift)
 
+* 2019/ 03/ 22 수업자료 The App Life Cycle.pdf - The App Life Cycle 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/The%20App%20Life%20Cycle.pdf)
+
 * 2019/ 03/ 22 과제 190322MyFirstProject_OnOff - 스위치 및 버튼구현 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/190322MyFirstProject_OnOff/MyFirstProject/ViewController.swift)
 
