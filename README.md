@@ -323,3 +323,6 @@ FastCampus Assignment commit
 
 * 2019/ 06/ 19 실습 - CustomCollectionAndTapBar MVC - CollectionView 와 TapBar를 이용한 실습 MVC 패턴 적용
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/CustomCollectionAndTapBar%20MVC/CustomCollectionAndTapBar)
+
+* 2019/ 07/ 13 실습 - GoogleAPIExample - Google MapView Example
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/GoogleAPIExample/GoogleAPIExample/ViewController.swift)
