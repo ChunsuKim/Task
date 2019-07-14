@@ -11,7 +11,7 @@
 		F30D519322DB5360007EB12D /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519222DB5360007EB12D /* TextFieldExtension.swift */; };
 		F30D519522DB5473007EB12D /* CoordinateAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519422DB5473007EB12D /* CoordinateAddressView.swift */; };
 		F385B32822D5AE1900F3B35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32722D5AE1900F3B35E /* AppDelegate.swift */; };
-		F385B32A22D5AE1900F3B35E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32922D5AE1900F3B35E /* ViewController.swift */; };
+		F385B32A22D5AE1900F3B35E /* CoordinatesAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */; };
 		F385B32D22D5AE1900F3B35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F385B32B22D5AE1900F3B35E /* Main.storyboard */; };
 		F385B32F22D5AE1B00F3B35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F385B32E22D5AE1B00F3B35E /* Assets.xcassets */; };
 		F385B33222D5AE1B00F3B35E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F385B33022D5AE1B00F3B35E /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		F30D519422DB5473007EB12D /* CoordinateAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateAddressView.swift; sourceTree = "<group>"; };
 		F385B32422D5AE1900F3B35E /* MapViewGoogleAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapViewGoogleAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F385B32722D5AE1900F3B35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F385B32922D5AE1900F3B35E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesAddressController.swift; sourceTree = "<group>"; };
 		F385B32C22D5AE1900F3B35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F385B32E22D5AE1B00F3B35E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F385B33122D5AE1B00F3B35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		F30D519122DB531E007EB12D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F385B32922D5AE1900F3B35E /* ViewController.swift */,
+				F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F385B32A22D5AE1900F3B35E /* ViewController.swift in Sources */,
+				F385B32A22D5AE1900F3B35E /* CoordinatesAddressController.swift in Sources */,
 				F30D519322DB5360007EB12D /* TextFieldExtension.swift in Sources */,
 				F30D519522DB5473007EB12D /* CoordinateAddressView.swift in Sources */,
 				F385B33A22D5B7FE00F3B35E /* Common.swift in Sources */,
