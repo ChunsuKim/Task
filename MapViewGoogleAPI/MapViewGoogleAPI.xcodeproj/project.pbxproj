@@ -10,6 +10,7 @@
 		8F5BE67768CA74106F3E3BD4 /* Pods_MapViewGoogleAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33394A2A338797BA76C3151D /* Pods_MapViewGoogleAPI.framework */; };
 		F30D519322DB5360007EB12D /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519222DB5360007EB12D /* TextFieldExtension.swift */; };
 		F30D519522DB5473007EB12D /* CoordinateAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519422DB5473007EB12D /* CoordinateAddressView.swift */; };
+		F30D519722DB577B007EB12D /* AddressAutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519622DB577B007EB12D /* AddressAutocompleteViewController.swift */; };
 		F385B32822D5AE1900F3B35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32722D5AE1900F3B35E /* AppDelegate.swift */; };
 		F385B32A22D5AE1900F3B35E /* CoordinatesAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */; };
 		F385B32D22D5AE1900F3B35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F385B32B22D5AE1900F3B35E /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		6C596804ADEF85D960FAF5F1 /* Pods-MapViewGoogleAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapViewGoogleAPI.release.xcconfig"; path = "Target Support Files/Pods-MapViewGoogleAPI/Pods-MapViewGoogleAPI.release.xcconfig"; sourceTree = "<group>"; };
 		F30D519222DB5360007EB12D /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		F30D519422DB5473007EB12D /* CoordinateAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateAddressView.swift; sourceTree = "<group>"; };
+		F30D519622DB577B007EB12D /* AddressAutocompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteViewController.swift; sourceTree = "<group>"; };
 		F385B32422D5AE1900F3B35E /* MapViewGoogleAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapViewGoogleAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F385B32722D5AE1900F3B35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesAddressController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F385B32922D5AE1900F3B35E /* CoordinatesAddressController.swift */,
+				F30D519622DB577B007EB12D /* AddressAutocompleteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				F30D519522DB5473007EB12D /* CoordinateAddressView.swift in Sources */,
 				F385B33A22D5B7FE00F3B35E /* Common.swift in Sources */,
 				F385B32822D5AE1900F3B35E /* AppDelegate.swift in Sources */,
+				F30D519722DB577B007EB12D /* AddressAutocompleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
