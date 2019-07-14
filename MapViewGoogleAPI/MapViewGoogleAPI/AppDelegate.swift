@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(apiKey)
         GMSPlacesClient.provideAPIKey(apiKey)
         
+        window? = UIWindow()
+        
+        window?.rootViewController = MainTabBarController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
