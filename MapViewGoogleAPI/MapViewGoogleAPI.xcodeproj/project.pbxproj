@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F5BE67768CA74106F3E3BD4 /* Pods_MapViewGoogleAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33394A2A338797BA76C3151D /* Pods_MapViewGoogleAPI.framework */; };
+		F30D519322DB5360007EB12D /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D519222DB5360007EB12D /* TextFieldExtension.swift */; };
 		F385B32822D5AE1900F3B35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32722D5AE1900F3B35E /* AppDelegate.swift */; };
 		F385B32A22D5AE1900F3B35E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385B32922D5AE1900F3B35E /* ViewController.swift */; };
 		F385B32D22D5AE1900F3B35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F385B32B22D5AE1900F3B35E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		29BC6469377B98F72ED3E2D6 /* Pods-MapViewGoogleAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapViewGoogleAPI.debug.xcconfig"; path = "Target Support Files/Pods-MapViewGoogleAPI/Pods-MapViewGoogleAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		33394A2A338797BA76C3151D /* Pods_MapViewGoogleAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapViewGoogleAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C596804ADEF85D960FAF5F1 /* Pods-MapViewGoogleAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapViewGoogleAPI.release.xcconfig"; path = "Target Support Files/Pods-MapViewGoogleAPI/Pods-MapViewGoogleAPI.release.xcconfig"; sourceTree = "<group>"; };
+		F30D519222DB5360007EB12D /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		F385B32422D5AE1900F3B35E /* MapViewGoogleAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapViewGoogleAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F385B32722D5AE1900F3B35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F385B32922D5AE1900F3B35E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F30D518F22DB52DE007EB12D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F30D519222DB5360007EB12D /* TextFieldExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F30D519022DB52F2007EB12D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30D519122DB531E007EB12D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F385B32922D5AE1900F3B35E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F385B31B22D5AE1900F3B35E = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				F385B32722D5AE1900F3B35E /* AppDelegate.swift */,
-				F385B32922D5AE1900F3B35E /* ViewController.swift */,
+				F385B33922D5B7FE00F3B35E /* Common.swift */,
+				F30D519122DB531E007EB12D /* Controllers */,
+				F30D519022DB52F2007EB12D /* View */,
+				F30D518F22DB52DE007EB12D /* Extension */,
 				F385B32B22D5AE1900F3B35E /* Main.storyboard */,
 				F385B32E22D5AE1B00F3B35E /* Assets.xcassets */,
 				F385B33022D5AE1B00F3B35E /* LaunchScreen.storyboard */,
 				F385B33322D5AE1B00F3B35E /* Info.plist */,
-				F385B33922D5B7FE00F3B35E /* Common.swift */,
 			);
 			path = MapViewGoogleAPI;
 			sourceTree = "<group>";
@@ -207,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F385B32A22D5AE1900F3B35E /* ViewController.swift in Sources */,
+				F30D519322DB5360007EB12D /* TextFieldExtension.swift in Sources */,
 				F385B33A22D5B7FE00F3B35E /* Common.swift in Sources */,
 				F385B32822D5AE1900F3B35E /* AppDelegate.swift in Sources */,
 			);
