@@ -326,3 +326,6 @@ FastCampus Assignment commit
 
 * 2019/ 07/ 13 실습 - GoogleAPIExample - Google MapView Example
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/GoogleAPIExample/GoogleAPIExample/ViewController.swift)
+
+* 2019/ 07/ 14 실습 - MapViewGoogleAPI - Google Map and places 를 활용하여 좌표 및 위치 찾기
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/MapViewGoogleAPI/MapViewGoogleAPI)
