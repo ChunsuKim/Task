@@ -24,6 +24,7 @@ class CoordinatesAddressController: UIViewController {
         configureLocationManager()
         configureGoogleMap()
         configureViews()
+        configureCustomKeyboard()
     }
     
     private func configureGoogleMap() {
@@ -72,7 +73,19 @@ class CoordinatesAddressController: UIViewController {
         marker.map = mapView
     }
     
+    private func configureCustomKeyboard() {
+        let toolBarKeyboard = UIToolbar()
+        toolBarKeyboard.sizeToFit()
+        let buttonflexBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let buttonDoneBar = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(keyboardDoneButtonClicked(_:)))
+        toolBarKeyboard.items = [buttonflexBar, buttonDoneBar]
+        toolBarKeyboard.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        coordinateAddressView.coordinateTextField.inputAccessoryView = toolBarKeyboard
+    }
     
+    @objc private func keyboardDoneButtonClicked(_ sender: Any) {
+        self.view.endEditing(true)
+    }
 }
 
 extension CoordinatesAddressController: CLLocationManagerDelegate {
