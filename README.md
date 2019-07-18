@@ -329,3 +329,6 @@ FastCampus Assignment commit
 
 * 2019/ 07/ 14 실습 - MapViewGoogleAPI - Google Map and places 를 활용하여 좌표 및 위치 찾기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/MapViewGoogleAPI/MapViewGoogleAPI)
+
+* 2019/ 07/ 18 실습 - UICollectionView_by_SJ - UICollectionView의 다양한 특징 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/UICollectionView_by_SJ/Guide/CollectionView/CollectionView/Source)
