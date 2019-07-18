@@ -335,3 +335,6 @@ FastCampus Assignment commit
 
 * 2019/ 07/ 18 실습 - UICollectionView_by_SJ - UICollectionView의 다양한 특징 실습
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/UICollectionView_by_SJ/Guide/CollectionView/CollectionView/Source)
+
+* 2019/ 07/ 19 실습 - CollectionViewAnimation - UICollectionView Auto Scroll 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CollectionViewAnimation/CollectionViewAnimation/ViewController.swift)
