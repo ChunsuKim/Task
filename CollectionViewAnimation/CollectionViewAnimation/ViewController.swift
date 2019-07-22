@@ -55,6 +55,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         popViewCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         popViewCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         popViewCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        popViewCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         popViewCollectionView.heightAnchor.constraint(equalToConstant: 260).isActive = true
     }
     
@@ -63,8 +64,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         popViewCollectionView.addSubview(pagecontrols)
         
         pagecontrols.translatesAutoresizingMaskIntoConstraints = false
-        pagecontrols.centerXAnchor.constraint(equalTo: popViewCollectionView.centerXAnchor).isActive = true
-        pagecontrols.bottomAnchor.constraint(equalTo: popViewCollectionView.bottomAnchor, constant: -20).isActive = true
+        pagecontrols.bottomAnchor.constraint(equalTo: popViewCollectionView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         pagecontrols.heightAnchor.constraint(equalToConstant: 30).isActive = true
         pagecontrols.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pagecontrols.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -83,7 +83,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             x = x + 1
         } else {
             x = 0
-            popViewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+            let indexPath = IndexPath(item: 0, section: 0)
+            popViewCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            pagecontrols.currentPage = indexPath.row
         }
         
     }
@@ -105,7 +107,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.width - 40, height: 260)
+        return CGSize(width: view.frame.width - 40, height: view.frame.height - 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
