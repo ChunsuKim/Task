@@ -68,21 +68,19 @@ extension ViewController: UITableViewDelegate {
                 cell.popDownButton.isSelected.toggle()
                 
                 if cell.popDownButton.isSelected {
-                    UIView.animate(withDuration: 0.3) {
-                        cell.isSelectedHiddenViewState(state: false)
-                        cell.popBackgroundViewBottomPriority?.isActive = false
-                        self.testTableView.reloadData()
-//                        self.testTableView.beginUpdates()
-//                        self.testTableView.endUpdates()
-                    }
+                    
+                    self.testTableView.beginUpdates()
+                    cell.isSelectedHiddenViewState(state: false)
+                    cell.popBackgroundViewBottomPriority?.isActive = false
+                    self.testTableView.endUpdates()
+                    
                 } else {
-                    UIView.animate(withDuration: 0.3) {
-                        cell.popBackgroundViewBottomPriority?.isActive = true
-                        cell.isSelectedHiddenViewState(state: true)
-                        self.testTableView.reloadData()
-//                        self.testTableView.beginUpdates()
-//                        self.testTableView.endUpdates()
-                    }
+                    
+                    self.testTableView.beginUpdates()
+                    cell.popBackgroundViewBottomPriority?.isActive = true
+                    cell.isSelectedHiddenViewState(state: true)
+                    self.testTableView.endUpdates()
+                    
                 }
             }
             
