@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     private var popList = PopDataManager.shared.pops
     
+    
     private let pagecontrols = UIPageControl()
     private var x = 1
     private let popViewCollectionView: UICollectionView = {
@@ -73,6 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     private func setTimer() {
         let _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
+        
     }
     
     // MARK: - Action Method
@@ -88,6 +90,10 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             popViewCollectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
             pagecontrols.currentPage = indexPath.row
         }
+        
+    }
+    
+    private func stopTimer() {
         
     }
     
@@ -120,5 +126,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return 0
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            
+        }
     }
 }
