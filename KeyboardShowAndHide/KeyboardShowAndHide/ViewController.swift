@@ -27,12 +27,15 @@ class ViewController: UIViewController {
     private let keyboardHeightView = UIView()
     
     private let noti = NotificationCenter.default
+    
+    private let movingSecondViewButton = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
+        configureMovingSecondViewButton()
         configureTextField()
         configureNextButton()
         hideKeyboard()
@@ -43,6 +46,29 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         removeKeyboardEvent()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initializeKeyboardEvent()
+    }
+    
+    private func configureMovingSecondViewButton() {
+        movingSecondViewButton.layer.borderWidth = 1
+        movingSecondViewButton.layer.borderColor = #colorLiteral(red: 0.9960784314, green: 0.2039215686, blue: 0.4705882353, alpha: 1)
+        movingSecondViewButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        movingSecondViewButton.setTitle("move to SecondView", for: .normal)
+        movingSecondViewButton.setTitleColor(#colorLiteral(red: 0.9960784314, green: 0.2039215686, blue: 0.4705882353, alpha: 1), for: .normal)
+        movingSecondViewButton.addTarget(self, action: #selector(movingSecondViewButtonDidTap(_:)), for: .touchUpInside)
+        
+        view.addSubview(movingSecondViewButton)
+        
+        movingSecondViewButton.translatesAutoresizingMaskIntoConstraints = false
+        movingSecondViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        movingSecondViewButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        movingSecondViewButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        movingSecondViewButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
     private func configureTextField() {
@@ -134,7 +160,7 @@ class ViewController: UIViewController {
         view.addSubview(passwordConfirmLineView)
         
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
         nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
         nameTextField.heightAnchor.constraint(equalToConstant: 25).isActive = true
@@ -277,6 +303,11 @@ class ViewController: UIViewController {
     
     @objc private func nextButtonDidTap(_ sender: UIButton) {
         print("registerInfo post")
+    }
+    
+    @objc private func movingSecondViewButtonDidTap(_ sender: UIButton) {
+        let secondVC = SecondViewController()
+        show(secondVC, sender: nil)
     }
 
 }
