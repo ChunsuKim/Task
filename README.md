@@ -338,3 +338,14 @@ FastCampus Assignment commit
 
 * 2019/ 07/ 19 실습 - CollectionViewAnimation - UICollectionView Auto Scroll 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CollectionViewAnimation/CollectionViewAnimation/ViewController.swift)
+
+* 2019/ 07/ 23 실습 - HideAndShow - Button을 눌렀을 때 레이아웃을 다시 잡아줘서 TableView Cell Height 이 높아졌다 낮아졌다 하는 효과
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/HideAndShow/HideAndShow/ViewController.swift)
+
+* 2019/ 07/ 30 실습 - KeyboardShowAndHide - 화면 bottom 쪽의 버튼이 키보드가 나오면서 가려지는 현상을 키보드 notification을 이용하여 해결하는 코드
+
+ViewController: 뷰를 맨아래에 height 0으로 잡아서 키보드 높이를 이용하는 방법
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/KeyboardShowAndHide/KeyboardShowAndHide/ViewController.swift)
+
+SecondViewController: AutoLayout Priority를 활용하는 방법
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/KeyboardShowAndHide/KeyboardShowAndHide/SecondViewController.swift)
