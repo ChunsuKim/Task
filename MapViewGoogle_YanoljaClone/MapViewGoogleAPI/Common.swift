@@ -8,4 +8,4 @@
 
 import Foundation
 
-let apiKey = "AIzaSyDbEhyJk13lsJyHzWDFQZ1GTsI0vSFnBak"
+let apiKey = "Google API Key"
