@@ -27,6 +27,9 @@
 		F30C758F2301863D0093160F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F30C75912301863D0093160F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F30C7597230187DC0093160F /* RxSwiftExample.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftExample.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F34FF9DE2302C34F00D97CE4 /* PublishSubjectExample.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubjectExample.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F34FF9DF2302C44C00D97CE4 /* ReplaySubjectExample.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReplaySubjectExample.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F34FF9E02302C54B00D97CE4 /* BehaviorSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,9 @@
 				F30C758E2301863D0093160F /* LaunchScreen.storyboard */,
 				F30C75912301863D0093160F /* Info.plist */,
 				F30C7597230187DC0093160F /* RxSwiftExample.playground */,
+				F34FF9DE2302C34F00D97CE4 /* PublishSubjectExample.playground */,
+				F34FF9DF2302C44C00D97CE4 /* ReplaySubjectExample.playground */,
+				F34FF9E02302C54B00D97CE4 /* BehaviorSubject.playground */,
 			);
 			path = RxSwiftExample;
 			sourceTree = "<group>";
