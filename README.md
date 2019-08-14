@@ -352,3 +352,6 @@ FastCampus Assignment commit
 
 * 2019/ 08/ 12 실습 - RxSwiftExample - RxSwift 실습예제
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/RxSwiftExample/RxSwiftExample)
+
+* 2019/ 08/ 14 수업자료 - sketch - sketch for developer
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/sketch/sketch%20for%20developer.pdf)
