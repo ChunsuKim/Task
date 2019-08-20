@@ -355,3 +355,6 @@ FastCampus Assignment commit
 
 * 2019/ 08/ 14 수업자료 - sketch - sketch for developer
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/sketch/sketch%20for%20developer.pdf)
+
+* 2019/ 08/ 20 실습 - CurrentLocation - CoreLocation 을 이용하여 label 에 현재 위치 띄우기
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CurrentLocation/CurrentLocation/ViewController.swift)
