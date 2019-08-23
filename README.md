@@ -86,6 +86,9 @@ FastCampus Assignment commit
 * 2019/ 03/ 25 수업자료 UI Guide.pdf - iOS UI Guide
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UI%20Guide.pdf)
 
+* 2019/ 03/ 25 실습 AlertControllerExample - AlertController
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/AlertControllerExample/AlertControllerExample/ViewController.swift)
+
 * 2019/ 03/ 25 과제 ButtonCode - AlertController의 버튼을 누를때 마다 Label에 숫자 나타내기 구현
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/ButtonCode/ButtonCode/ViewController.swift)
 
