@@ -19,7 +19,7 @@ class ThirdViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        view.backgroundColor = . gray
+        view.backgroundColor = .gray
         print("presenting VC :", from)
         
         print("ThirdviewDidLoad")

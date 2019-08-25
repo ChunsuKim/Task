@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = . green
+        view.backgroundColor = .green
         print("presenting VC :", from)
         
         print("viewDidLoad")
