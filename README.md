@@ -114,7 +114,10 @@ FastCampus Assignment commit
 * 2019/ 03/ 29 시험 First_Test - 배운 내용 시험
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/First_Test.playground/Pages)
 
-* 2019/ 04/ 01 과제 Assignment190401 - Typecasting
+* 2019/ 04/ 02 실습 TypeCasting - 타입 캐스팅, 타입 체크
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/Type%20Casting.playground/Pages)
+
+* 2019/ 04/ 02 과제 Assignment190401 - Typecasting
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190401.playground/Contents.swift)
 
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
