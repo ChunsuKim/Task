@@ -117,6 +117,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 02 실습 TypeCasting - 타입 캐스팅, 타입 체크
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Type%20Casting.playground/Pages)
 
+* 2019/ 04/ 02 실습 StoryboardSegueExample - 스토리보드 Segue 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/StoryboardSegueExample/StoryboardSegueExample)
+
 * 2019/ 04/ 02 과제 Assignment190401 - Typecasting
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Assignment190401.playground/Contents.swift)
 
