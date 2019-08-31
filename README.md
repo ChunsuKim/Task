@@ -129,6 +129,8 @@ FastCampus Assignment commit
 * 2019/ 04/ 04 실습 UserDefaults - Starter - UserDefaults 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UserDefaults%20-%20Starter/UserDefaults/ViewController.swift)
 
+* 2019/ 04/ 04 실습 DelegateExample - CustomView and Delegate 실습
+
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPractice/LoginPractice)
 
