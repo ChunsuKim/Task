@@ -131,6 +131,9 @@ FastCampus Assignment commit
 
 * 2019/ 04/ 04 실습 DelegateExample - CustomView and Delegate 실습
 
+* 2019/ 04/ 05 실습 NavigationControllerExample - NavigationController 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/NavigationControllerExample/NavigationControllerExample)
+
 * 2019/ 04/ 05 실습 LoginPractice - login page 구현
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPractice/LoginPractice)
 
