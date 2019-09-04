@@ -146,6 +146,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 08 실습 LoginPracticeDelegateUserD - Signin/Signup Page 구현 및 Delegate and UserDefaults 사용
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/LoginPracticeDelegateUserD/LoginPractice)
 
+* 2019/ 04/ 09 실습 AutoLayoutByCode - AutoLayout 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/AutoLayoutByCode/AutoLayoutByCode/ViewController.swift)
+
 * 2019/ 04/ 09 과제 AutoLayoutAssignment - AutoLayout을 적용하여 사각형 5개 정렬하기 ViewController : storyboard를 이용하여 AutoLayout 적용, SecondViewController: Code를 사용하여 AutoLayout 적용
 [파일보기 코드버전](https://github.com/ChunsuKim/Task/blob/master/AutoLayoutAssignment/AutoLayoutAssignment/SecondViewController.swift)
 
