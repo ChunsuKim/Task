@@ -173,6 +173,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 12 수업자료 UITableView.pdf - UITableView 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UITableView.pdf)
 
+* 2019/ 04/ 12 실습 TableViewPractice - Starter - TableView 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/TableViewPractice%20-%20Starter/TableViewPractice)
+
 * 2019/ 04/ 12 과제 TableViewPractice - Starter - TableView에 mutipleSelection 적용하여 여러가지 기능 구현 과제
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/TableViewPractice%20-%20Starter/TableViewPractice/TableViewMultipleSelection.swift)
 
