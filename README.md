@@ -188,6 +188,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 17 실습 Instagram_ver_1.0 - xib를 사용하여 instagram 따라해보기 TableViewCell 과 AutoLayout 활용
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/Instagram_ver_1.0/Instagram)
 
+* 2019/ 04/ 18 수업자료 ARC - ARC(Automatic Reference Counting) 수업자료
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/ARC.playground/Pages)
+
 * 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
 
