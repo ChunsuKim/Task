@@ -191,6 +191,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 18 수업자료 ARC - ARC(Automatic Reference Counting) 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/ARC.playground/Pages)
 
+* 2019/ 04/ 18 실습 StoryboardDesignableExample - Starter - IBInspector / IBDesignable 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/StoryboardDesignableExample%20-%20Starter/StoryboardDesignableExample)
+
 * 2019/ 04/ 19 실습 BasicCalculator - 텍스트필드를 이용한 기본적인 계산기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/BasicCalculator/BasicCalculator/ViewController.swift)
 
