@@ -218,6 +218,9 @@ FastCampus Assignment commit
 * 2019/ 04/ 29 실습 DominoPizza_ver_1.0 - TableView를 이용하여 Domino Pizza App 만들어 보기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/DominoPizza_ver_1.0/DominoPizza)
 
+* 2019/ 04/ 30 실습 NotificationCenterExample - Starter - NotificationCenter 실습
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/NotificationCenterExample%20-%20Starter/NotificationCenterExample)
+
 * 2019/ 04/ 30 수업자료 Error Handling.pdf - Error Handling 이론 PDF 수업자료
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/Error%20Handling.pdf)
 
