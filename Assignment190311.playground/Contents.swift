@@ -194,7 +194,7 @@ print("My average grade is : " + myAverage(90, 95, 93, 100, 97))
 //}
 //
 //calculateGrade(from: [100, 100, 90, 85])
-
+//
 
 
 // Variadic 파라미터를 이용한 방식
