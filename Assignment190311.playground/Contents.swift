@@ -18,7 +18,7 @@ print(myage(old: "37"))
 //}
 //
 //introduceMySelf(withName: "Tory", age: 4)
-
+//
 
 // 정수를 하나 입력받아 2의 배수 여부를 반환하는 함수 8점
 func multipliesOfTwo(number:Int) -> String {
