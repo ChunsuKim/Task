@@ -254,6 +254,9 @@ FastCampus Assignment commit
 * 2019/ 05/ 07 실습 UITouch:UIGestureRecognizer - UIGesture 실습
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UITouch:UIGestureRecognizer/GestureRecognizerExample%20-%20Starter/GestureRecognizerExample/GestureViewController.swift)
 
+* 2019/ 05/ 07 실습 ImagePickerControllerExample (Starter) - UIImagePickerController 실습
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/ImagePickerControllerExample%20(Starter)/ImagePickerControllerExample/ViewController.swift)
+
 * 2019/ 05/ 08 과제 UITouch:UIGestureRecognizer - UITouch 에서 이미지 터치 후 이동시 부자연스러운 동작 해결하기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/UITouch:UIGestureRecognizer/GestureRecognizerExample%20-%20Starter/GestureRecognizerExample/TouchViewController.swift)
 
