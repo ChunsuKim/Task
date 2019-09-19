@@ -88,6 +88,7 @@ print(arrangement())
 //func calculator(operand1: Int, operand2: Int, op: Arithmetic) -> Int {
 //    // 코드
 //}
+//
 
 enum Arithmetic {
     case addition, subtraction, multiplication, division
