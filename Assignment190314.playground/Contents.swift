@@ -75,6 +75,7 @@ func arrangement() -> Array<Int> {
 //            result.append(i)
 //        }
 //    }
+//
     return result
 }
 
