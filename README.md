@@ -438,3 +438,6 @@ FastCampus Assignment commit
 
 * 2019/ 08/ 20 실습 - CurrentLocation - CoreLocation 을 이용하여 label 에 현재 위치 띄우기
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/CurrentLocation/CurrentLocation/ViewController.swift)
+
+* 2019/ 09/ 14 실습 - ContactsUI - iOS에 저장된 연락처 정보를 가져오는 코드
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/ContactsUI/ContactsUI/ViewController.swift)
