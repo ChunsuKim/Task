@@ -441,3 +441,6 @@ FastCampus Assignment commit
 
 * 2019/ 09/ 14 실습 - ContactsUI - iOS에 저장된 연락처 정보를 가져오는 코드
 [파일보기](https://github.com/ChunsuKim/Task/blob/master/ContactsUI/ContactsUI/ViewController.swift)
+
+* 2019/ 10/ 02 실습 - ContactsParsing - iPhone에 저장된 연락처를 파싱하여 TableView에 보여주기
+[파일보기](https://github.com/ChunsuKim/Task/tree/master/ContactsParsing/ContactsParsing)
