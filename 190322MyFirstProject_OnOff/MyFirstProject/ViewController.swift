@@ -15,10 +15,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
+    @IBOutlet weak var screen: UILabel!
+    var result:Int = 0
+    var click:Bool = true
     
-    
-    
-    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,12 +28,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    var result:Int = 0
-    var click:Bool = true
-    
-    @IBOutlet weak var screen: UILabel!
-    
-        
+    // MARK: - Action handlers
     @IBAction func minusButton(_ sender: Any) {
         result -= 1
         screen.text = String(result)
