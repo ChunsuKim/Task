@@ -444,3 +444,6 @@ FastCampus Assignment commit
 
 * 2019/ 10/ 02 실습 - ContactsParsing - iPhone에 저장된 연락처를 파싱하여 TableView에 보여주기
 [파일보기](https://github.com/ChunsuKim/Task/tree/master/ContactsParsing/ContactsParsing)
+
+* 2019/ 10/ 04 실습 - CheckBox - 체크박스 전체 선택 및 해제, 개별 선택 및 해제
+[파일보기](https://github.com/ChunsuKim/Task/blob/master/CheckBox/CheckBox/ViewController.swift)
