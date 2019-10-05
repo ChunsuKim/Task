@@ -142,7 +142,8 @@ struct Post {
 }
 
 func practice3() {
-    let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+    let apiUrl = "https://jsonplaceholder.typicode.com/posts"
+    let url = URL(string: apiUrl)!
     
     let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
         guard let data = data,
