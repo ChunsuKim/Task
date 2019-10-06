@@ -36,6 +36,12 @@ struct Fruit: Codable {
 let fruits = try decoder.decode([Fruit].self, from: jsonFruits)
 fruits.forEach { print($0) }
 
+/*
+ Fruit(name: "Orange", cost: 100, description: Optional("A juicy orange"))
+ Fruit(name: "Apple", cost: 200, description: nil)
+ Fruit(name: "Watermelon", cost: 300, description: nil)
+ */
+
 
 /***************************************************
  2번 문제
@@ -76,6 +82,10 @@ struct Report: Codable {
 if let report = try? decoder.decode(Report.self, from: jsonReport) {
     print(report)
 }
+
+/*
+ Report(name: "Final Results for iOS", reportId: "905", readCount: "10", reportDate: "2019-02-14")
+ */
 
 
 /***************************************************
@@ -142,6 +152,13 @@ if let report = try? decoder.decode([Person].self, from: jsonMovie) {
     report[0].favoriteMovies.forEach { print($0) }
 }
 
+/*
+ Name : Edward
+ Movie(title: "Big Fish", releaseYear: 2003)
+ Movie(title: "Gran Torino", releaseYear: 2008)
+ Movie(title: "3 Idiots", releaseYear: 2009)
+ */
+
 
 /***************************************************
  4번 문제
@@ -186,6 +203,7 @@ func fetchGitHubRepositories() {
         do {
             let repositories = try JSONDecoder().decode(Repositories.self, from: data)
             for repository in repositories.items {
+                print("= = = = = = = = = = = = = = =\n")
                 print(repository)
                 print("= = = = = = = = = = = = = = =\n")
             }
