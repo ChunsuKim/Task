@@ -27,5 +27,12 @@ func throwsNSErrorExample() {
 
 throwsNSErrorExample()
 
+/*
+ Error : Error Domain=Domain error string Code=99 "(null)" UserInfo={MyKey=MyValue}
+ NSError : Error Domain=Domain error string Code=99 "(null)" UserInfo={MyKey=MyValue}
+ domain : Domain error string
+ code : 99
+ userInfo : ["MyKey": "MyValue"]
+ */
 
 //: [Next](@next)
