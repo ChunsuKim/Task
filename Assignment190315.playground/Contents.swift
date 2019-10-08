@@ -30,6 +30,7 @@ let otherClosure: ([Int]) -> Int = { $0.count }
 //func combineString(str1: String?, str2: String?, str3: String?) -> String {
 //    // code
 //}
+//
 
 // 입력 예시 및 결과
 // combineString1(str1: "AB", str2: "CD", str3: "EF") -> "ABCDEF"
