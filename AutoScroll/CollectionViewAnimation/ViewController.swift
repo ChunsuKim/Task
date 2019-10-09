@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource {
     
+    // MARK: - Properties
     private var popList = PopDataManager.shared.pops
-    
     
     private let pagecontrols = UIPageControl()
     private var x = 1
+    
+    // CollectionView
     private let popViewCollectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -27,8 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         return collectionView
     }()
     
-    
-    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +40,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         
     }
     
+    // MARK: - Setting methods
     private func configureCollectionView() {
         popViewCollectionView.dataSource = self
         popViewCollectionView.delegate = self
@@ -129,6 +131,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UICollectionView Delegate
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
